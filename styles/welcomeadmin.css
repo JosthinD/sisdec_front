@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #020021;
+    color: #fff;
+    padding: 20px;
+}
+
+.menu-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    color: #020021;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.menu-options {
+    display: none;
+}
+
+.menu-left:hover .menu-options {
+    display: block;
+}
+
+.welcome-container {
+    margin-left: 220px;
+    padding: 20px;
+    background-color: #fff;
+    color: #020021;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #020021;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #020021;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
+    z-index: 9999; /* Asegura que esté por encima de todo */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100vw;
+    height: 90vh;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Para incluir el padding en el ancho y alto total */
+}
+
+.modal__paragraph {
+    text-align: center; /* Centra el texto */
+    font-size: 2.5em; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color del texto */
+    margin-top: 20px; /* Espacio superior */
+}
+  
+#userData {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+#userData p {
+    margin: 5px 0;
+  }
