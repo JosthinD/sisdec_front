@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/images/iconuni.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISDEC</title>
+    <link rel="stylesheet" href="styles/estilos.css">  
+</head>
+<body>
+    <div class="container">
+        <form id="login-form" class="login-form">
+            <h1 class="hero__title">¡Bienvenido a SISDEC!</h1>
+            <figure class="knowledge__picture">
+                <img src="./images/logo_uni.png" class="knowledge__img">
+            </figure>
+            <p class="knowledge__paragraph">Sistema integral para la gestion de la decanatura de ingenieria de sistemas IUDC</p>
+            <input type="text" id="email" name="email" required placeholder="Correo">
+            <input type="password" id="password" name="password" required placeholder="Contraseña">
+            <button type="submit">Enviar</button>
+            <a href="#" id="forgotPassword" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            
+        </form>
+    
+        <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h1>Recuperar contraseña</h1>
+              <img src="./images/iconosoporte.PNG" alt="Imagen">
+              <input type="text" id="documentNumber" placeholder="# documento identidad">
+              <input type="text" id="name" placeholder="Nombre y Apellido">
+              <button id="send">Enviar novedad</button>
+            </div>
+          </div>
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>

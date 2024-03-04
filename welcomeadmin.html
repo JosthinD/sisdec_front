@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="styles/welcomeadmin.css">
+</head>
+<body>
+    <div class="menu-left">
+        <button class="menu-button">Menu</button>
+        <div class="menu-options">
+            <ul>
+                <li>Opcion1</li>
+                <li>Opcion2</li>
+                <li>Opcion3</li>
+            </ul>
+        </div>
+    </div>
+    <div class="welcome-container">
+        <h1>Bienvenido <span id="userName"></span></h1>
+        <button>Menu</button>
+        <button type="submit">Editar Usuario</button>
+        <button>Cambiar Contraseña</button>
+        <button data-action="cerrar-sesion">Cerrar Sesión</button>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <form id="Users-form" class="Users-form">
+          <h2 class="modal__paragraph">Editar Usuario</h2>
+          <div id="userData">
+            <a>Identidad Usuario</a>
+            <input type="text" id="firstName" placeholder="Primer Nombre">
+            <input type="text" id="secondName" placeholder="Segundo Nombre">
+            <input type="text" id="lastName" placeholder="Primer Apellido">
+            <input type="text" id="secondLastName" placeholder="Segundo Apellido">
+            <a>Datos Usuario</a>
+            <input type="text" id="phone" placeholder="Telefono">
+            <input type="text" id="emailget" placeholder="correo">
+          </div>
+          <button type="submit">Enviar</button>
+          <button type="button" data-action="cerrar-editarusuario">Cancelar</button>
+        </div>
+      </div>
+
+    <script src="js/welcomeadmin.js"></script>
+</body>
+</html>
