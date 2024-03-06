@@ -19,31 +19,55 @@
         </div>
     </div>
     <div class="welcome-container">
-        <h1>Bienvenido <span id="userName"></span></h1>
+        <h1>Bienvenido</h1>
         <button>Menu</button>
         <button type="submit">Editar Usuario</button>
-        <button>Cambiar Contraseña</button>
+        <button id="cambiarContraseñaButton">Cambiar Contraseña</button>
         <button data-action="cerrar-sesion">Cerrar Sesión</button>
     </div>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
+        <span class="close" id="myModalClose">&times;</span>
         <form id="Users-form" class="Users-form">
           <h2 class="modal__paragraph">Editar Usuario</h2>
           <div id="userData">
             <a>Identidad Usuario</a>
-            <input type="text" id="firstName" placeholder="Primer Nombre">
-            <input type="text" id="secondName" placeholder="Segundo Nombre">
-            <input type="text" id="lastName" placeholder="Primer Apellido">
-            <input type="text" id="secondLastName" placeholder="Segundo Apellido">
+            <input type="text" id="id">
+            <input type="text" id="firstName">
+            <input type="text" id="secondName">
+            <input type="text" id="lastName">
+            <input type="text" id="secondLastName">
             <a>Datos Usuario</a>
-            <input type="text" id="phone" placeholder="Telefono">
-            <input type="text" id="emailget" placeholder="correo">
+            <input type="text" id="phone">
+            <input type="text" id="emailget">
           </div>
-          <button type="submit">Enviar</button>
-          <button type="button" data-action="cerrar-editarusuario">Cancelar</button>
+          <div class="button-container">
+            <button>Enviar</button>
+            </div>
         </div>
-      </div>
+    </div>
+
+    <div id="cambiarContraseñaModal" class="modal_camcont">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="modal__paragraph">Cambiar Contraseña</h2>
+            <div id="cambiarContraseñaData">
+                <a>ID de Usuario:</a>
+                <input type="text" id="id_user" readonly>
+                <a>Contraseña actual:</a>
+                <input type="password" id="oldPassword" placeholder="Contraseña actual">
+                <a>Nueva contraseña:</a>
+                <input type="password" id="newPassword" placeholder="Nueva contraseña">
+                <a>Confirmar nueva contraseña:</a>
+                <input type="password" id="confirmNewPassword" placeholder="Confirmar nueva contraseña">
+            </div>
+            <div class="button-container">
+                <button>Enviar</button>
+                <button data-action="cerrar-cambiarcontraseña">Cancelar</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/welcomeadmin.js"></script>
 </body>
