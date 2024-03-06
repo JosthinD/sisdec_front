@@ -40,7 +40,6 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   })
   .then((response) => response.json()) // Convertir la respuesta a JSON
   .then((result) => {
-
     if (result.isSuccess) { // Verificar si el inicio de sesión fue exitoso
       // Redirigir a la página correspondiente según el rol
 

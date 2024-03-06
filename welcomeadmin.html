@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="styles/welcomeadmin.css">
 </head>
 <body>
-    <div class="menu-left">
-        <button class="menu-button">Menu</button>
-        <div class="menu-options">
-            <ul>
-                <li>Opcion1</li>
-                <li>Opcion2</li>
-                <li>Opcion3</li>
-            </ul>
-        </div>
-    </div>
+    <img src="./images/fondo_uni.jpg"  class="imgfondo">
     <div class="welcome-container">
-        <h1>Bienvenido</h1>
-        <button>Menu</button>
+        <h1 id="Bienve">Bienvenido</h1>
+        <button id="menuButton">Menu</button>
         <button type="submit">Editar Usuario</button>
         <button id="cambiarContraseñaButton">Cambiar Contraseña</button>
         <button data-action="cerrar-sesion">Cerrar Sesión</button>
+    </div>
+
+    <div class="menuContainer" id="menuContainer">
+        <h1 class="titulom__paragraph">MENU</h1>
+        <div id="optionsmenu">
+            <button class="menuItem">Prueba</button>
+            <button class="menuItem">Prueba2</button>
+            <button class="menuItem">Prueba3</button>
+        </div>
     </div>
 
     <div id="myModal" class="modal">
@@ -44,7 +44,8 @@
           </div>
           <div class="button-container">
             <button>Enviar</button>
-            </div>
+            <button data-action="cerrar-editarusuario">Cancelar</button>
+          </div>
         </div>
     </div>
 

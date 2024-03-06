@@ -1,9 +1,11 @@
-const menuButton = document.querySelector('.menu-button');
-const menuOptions = document.querySelector('.menu-options');
-
-menuButton.addEventListener('click', () => {
-    menuOptions.style.display = menuOptions.style.display === 'block' ? 'none' : 'block';
-});
+document.getElementById("menuButton").addEventListener("click", function() {
+    var menuContainer = document.getElementById("menuContainer");
+    if (menuContainer.style.display !== "block") {
+      menuContainer.style.display = "block";
+    } else {
+      menuContainer.style.display = "none";
+    }
+  });
 
 const myModal = document.getElementById('myModal');
 const myModalCloseButton = document.getElementById('myModalClose');
@@ -20,6 +22,7 @@ cerrarSesionButton.addEventListener('click', () => {
 
 const editUserButton = document.querySelector('button:nth-child(3)');
 const modal = document.getElementById('myModal');
+
 
 editUserButton.addEventListener('click', () => {
     // Obtener el correo electrónico guardado en sessionStorage
@@ -99,10 +102,6 @@ const cambiarContraseñaButton = document.querySelector('button:nth-child(4)');
 const cambiarContraseñaModal = document.getElementById('cambiarContraseñaModal');
 const cambiarContraseñaCloseButton = document.querySelector('#cambiarContraseñaModal .close');
 
-//cambiarContraseñaButton.addEventListener('click', () => {
-//    cambiarContraseñaModal.style.display = 'block';
-//});
-
 cambiarContraseñaCloseButton.addEventListener('click', () => {
     cambiarContraseñaModal.style.display = 'none';
 });
@@ -167,6 +166,7 @@ enviarcontrButton.addEventListener('click', (event) => {
         .then((result) => {
             
             console.log(result); // Opcional: Mostrar la respuesta en la consola
+            alert(result.message+("<<Contraseña actual>>")); // Mostrar la respuesta en una alerta
 
             if (result.isSuccess) {
 
@@ -183,18 +183,13 @@ enviarcontrButton.addEventListener('click', (event) => {
                 };
 
                 fetch(`https://localhost:7215/api/Users/UpdateUserPassword?userId=${userId}&contraseña=${newPassword}`, requestOptions)
-                .then(response => response.text())
-                .then(result => console.log(result))
+                .then((response) => response.json()) // Convertir la respuesta a JSON
+                .then((result) => {
+                    alert(result.message); // Mostrar la respuesta en una alerta
+                    console.log(result); // Opcional: Mostrar la respuesta en la consola
+                })
                 .catch(error => console.error(error));
-
-            
             }
-
-
-
         });
-
-
     }
-
 });
