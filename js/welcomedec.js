@@ -1,3 +1,10 @@
+//document.addEventListener("DOMContentLoaded", function() {
+//    var usuario = JSON.parse(sessionStorage.getItem('usuario')) || {};
+//    var datosUsuario = ("ID Usuario:" + usuario.data.id + " " +"Nombre:" + usuario.data.primerNombre);
+
+//    document.getElementById('nombreUsuario').innerText = datosUsuario;
+//});
+
 document.addEventListener("DOMContentLoaded", function() {
     var usuario = JSON.parse(sessionStorage.getItem('usuario'));
 
@@ -7,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('Rol').textContent = usuario.data.rol;
     }
 });
+
+//const userIdpri = document.getElementById('id_use').value;
 
 document.getElementById("menuButton").addEventListener("click", function() {
     var menuContainer = document.getElementById("menuContainer");

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="styles/welcomeadmin.css">
+</head>
+<body>
+    <img src="./images/imglogodesinguni.png"  class="imgfondo">
+    <div class="welcome-container">
+        <h1 id="Bienve">Bienvenido</h1>
+    </div>
+
+    <div class="datos_usuario">
+        <h1 id="id_use"></h1>
+        <h1 id="primerNombre"></h1>
+        <h1 id="Rol"></h1>
+    </div>
+
+    <div class="botones_sesion">
+        <button id="menuButton"><img src="./images/imgmenu.PNG" alt="Imagen">Menu</button>
+        <button type="submit"><img src="./images/imgediusu.png" alt="Imagen">Editar Usuario</button>
+        <button id="cambiarContraseñaButton"><img src="./images/imgcamcont.png" alt="Imagen">Cambiar Contraseña</button>
+        <button data-action="cerrar-sesion"><img src="./images/imgsalir.png" alt="Imagen">Cerrar Sesión</button>
+    </div>
+
+    
+    <div class="menuContainer" id="menuContainer">
+        <h1 class="titulom__paragraph">MENU</h1>
+        <div id="optionsmenu">
+            <button class="menuItem">Prueba</button>
+            <button class="menuItem">Prueba2</button>
+            <button class="menuItem">Prueba3</button>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span class="close" id="myModalClose">&times;</span>
+        <form id="Users-form" class="Users-form">
+          <h2 class="modal__paragraph">Editar Usuario</h2>
+          <div id="userData">
+            <a>Identidad Usuario</a>
+            <input type="text" id="id" readonly>
+            <input type="text" id="firstName">
+            <input type="text" id="secondName">
+            <input type="text" id="lastName">
+            <input type="text" id="secondLastName">
+            <a>Datos Usuario</a>
+            <input type="text" id="phone">
+            <input type="text" id="emailget" readonly>
+          </div>
+          <div class="button-container">
+            <button>Enviar</button>
+            <button data-action="cerrar-editarusuario">Cancelar</button>
+          </div>
+        </div>
+    </div>
+
+    <div id="cambiarContraseñaModal" class="modal_camcont">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="modal__paragraph">Cambiar Contraseña</h2>
+            <div id="cambiarContraseñaData">
+                <a>ID de Usuario:</a>
+                <input type="text" id="id_user" readonly>
+                <a>Contraseña actual:</a>
+                <input type="password" id="oldPassword" placeholder="Contraseña actual">
+                <a>Nueva contraseña:</a>
+                <input type="password" id="newPassword" placeholder="Nueva contraseña">
+                <a>Confirmar nueva contraseña:</a>
+                <input type="password" id="confirmNewPassword" placeholder="Confirmar nueva contraseña">
+            </div>
+            <div class="button-container">
+                <button>Enviar</button>
+                <button data-action="cerrar-cambiarcontraseña">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/welcomeadmin.js"></script>
+</body>
+</html>

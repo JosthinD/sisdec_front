@@ -10,19 +10,62 @@ document.getElementsByClassName("close")[0].addEventListener("click", function()
 
 // Enviar información y mostrar alerta al hacer clic en "Enviar novedad"
 document.getElementById("send").addEventListener("click", function() {
-  // Obtener datos ingresados por el usuario
-  const documentNumber = document.getElementById("documentNumber").value;
-  const name = document.getElementById("name").value;
 
-  // Aquí puedes enviar los datos al servidor
-  // Por ahora, simplemente mostramos una alerta
-  alert("Información enviada:\nDocumento: " + documentNumber + "\nNombre: " + name);
+// Obtener datos ingresados por el usuario
+const email_pw = document.getElementById("email_pw").value;
+
+// Realizar la solicitud FETCH para obtener los datos del usuario
+fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email_pw}`, {
+    method: 'GET',
+    headers: {
+        'accept': '*/*'
+    }
+})
+    .then(response => response.json())
+    .then((result) => {
+
+        if (result.isSuccess) {
+
+          sessionStorage.setItem('usuario', JSON.stringify(result));
+
+          const usuario = JSON.parse(sessionStorage.getItem('usuario'));
+          const idUsuario = usuario.data.id;;
+
+          const myHeaders = new Headers();
+          myHeaders.append("accept", "*/*");
+          myHeaders.append("Content-Type", "application/json");
+
+          const raw = JSON.stringify({
+              "asunto": "Olvide mi contraseña",
+              "descripcion": "Ayuda, olvidé mi contraseña",
+              "idUsuario": idUsuario
+          });
+
+            const requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: raw,
+                redirect: "follow"
+            };
+
+            fetch("https://localhost:7215/api/Support/NewSoporte", requestOptions)
+            .then((response) => response.json()) // Convertir la respuesta a JSON
+            .then((result) => {
+                alert(result.message+("<<Se ha enviado la novedad al administrador, espere respuesta.>>")); // Mostrar la respuesta en una alerta
+                console.log(result); // Opcional: Mostrar la respuesta en la consola
+            })
+            .catch(error => console.error(error));
+
+        }
+
+
+    })
+    .catch(error => console.error('error', error));
 
   // Cerrar modal después de enviar la información
   document.getElementById("modal").style.display = "none";
-});
+})
 
-const url = 'https://localhost:7215/api/Login';
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Evitar que el formulario se envíe
@@ -32,7 +75,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
   sessionStorage.setItem('email', email);
 
-  fetch(`${url}?email=${email}&password=${password}`, {
+  fetch(`https://localhost:7215/api/Login?email=${email}&password=${password}`, {
     method: 'GET',
     headers: {
       'accept': '*/*'
@@ -43,25 +86,54 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     if (result.isSuccess) { // Verificar si el inicio de sesión fue exitoso
       // Redirigir a la página correspondiente según el rol
 
-      sessionStorage.setItem('email', email); // Guardar el email en la sesión
+      
 
-      switch(result.data.rol) {
-        case 'Administrador':
-          window.location.href = 'welcomeadmin.html';
-          break;
-        case 'Decano':
-          window.location.href = 'welcomedec.html';
-          break;
-        case 'Maestro':
-          window.location.href = 'welcomeprof.html';
-          break;
-        default:
-          // Redirigir a una página de error u otra página por defecto
-          window.location.href = 'welcomeadmin.html';
-          break;
+      const email = document.getElementById('email').value;
+
+      fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+      method: 'GET',
+      headers: {
+        'accept': '*/*'
       }
-    } else {
-      // Mostrar un mensaje de error en un alert
+      })
+      .then((response) => response.json()) // Convertir la respuesta a JSON
+      .then((data) => {
+
+        sessionStorage.setItem('usuario', JSON.stringify(data));
+
+//        var usuario = JSON.parse(sessionStorage.getItem('usuario')) || {};
+        
+//        alert(`Datos del usuario:
+//            ID: ${usuario.data.id}
+//            Nombre: ${usuario.data.primerNombre}`);
+
+        sessionStorage.setItem('email', email); // Guardar el email en la sesión
+        
+        switch(result.data.rol) {
+        case 'Administrador':
+            window.location.href = 'welcomeadmin.html';
+
+            break;
+          case 'Decano':
+            window.location.href = 'welcomedec.html';
+
+            break;
+          case 'Maestro':
+            window.location.href = 'welcomeprof.html';
+
+            break;
+          default:
+            // Redirigir a una página de error u otra página por defecto
+            window.location.href = 'welcomeadmin.html';
+            break;
+          }
+        })
+   
+      .catch((error) => console.error(error));
+
+    } 
+    
+    else {
       alert(result.message);
     }
   })

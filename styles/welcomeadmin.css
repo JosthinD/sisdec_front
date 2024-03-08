@@ -4,15 +4,15 @@ body {
     background-color: #fff; /* Aquí se define el color blanco */
 }
 
-.imgfondo{
-    width: 40%; /* Cambia el tamaño de la imagen */
+.imgfondo {
+    width: 20%; /* Cambia el tamaño de la imagen */
     display: block;
     margin: 0 auto; /* Centra horizontalmente */
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-30%, -40%); /* Centra vertical y horizontalmente */
-}
+    bottom: 0;
+    right: 0;
+  }
+
   
   .menuContainer {
     position: fixed;
@@ -23,6 +23,7 @@ body {
     background-color: #020021;
     color: #fff;
     display: none;
+    border-right: 7px solid white; /* Agrega una línea blanca en el lado derecho */
   }
   
   .menuItem {
@@ -38,12 +39,16 @@ body {
     padding: 10px 40px;
   }
 
+
 .welcome-container {
-    margin-left: 220px;
+    font-size: 2rem;
+    margin-left: 0px;
     padding: 20px;
-    background-color: #fff;
-    color: #020021;
+    background-color: #020021;
+    color: #fff;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .titulom__paragraph {
@@ -53,6 +58,53 @@ body {
     color: #fff; /* Color del texto */
     margin-top: 20px; /* Espacio superior */
 }
+
+
+.botones_sesion {
+    display: flex;
+    justify-content: center;
+}
+
+.botones_sesion button {
+    background-color: #fff;
+    color: #020021;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    position: relative;
+    border-radius: 50px; /* Hace que los bordes sean muy curvos, dando la apariencia de un óvalo */
+}
+
+.botones_sesion button:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Color oscuro semi-transparente */
+    color: #fff;
+}
+
+.botones_sesion button img {
+    display: block;
+    margin: 0 auto 5px; /* Centrar la imagen encima del texto */
+}
+
+.datos_usuario {
+    text-align: center; /* Centra el texto */
+    margin-top: 50px; /* Espacio superior */
+    position: relative; /* Para posicionar la línea */
+  }
+  
+  .datos_usuario h1 {
+    margin: 10px 0; /* Espacio entre cada dato */
+  }
+  
+  .datos_usuario:before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Posición encima del texto */
+    left: 35%; /* Centra la línea horizontalmente */
+    width: 30%; /* Longitud de la línea */
+    border-top: 4px solid #020021; /* Línea encima del texto */
+  }
+  
+
 
 #optionsmenu {
     display: flex;
@@ -85,7 +137,7 @@ button:hover {
     overflow: auto;
     background-color: rgba(0,0,0,0.5); /* Fondo oscuro semi-transparente */
 
-
+}
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* Centrar verticalmente */
@@ -124,7 +176,7 @@ button:hover {
     height: 90vh;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Para incluir el padding en el ancho y alto total */
+    box-sizing: border-box; /* Para incluir el padding en el ancho y alto total 
 }*/
 
 .modal__paragraph {
