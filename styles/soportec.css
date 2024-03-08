@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Aquí se define el color blanco */
+}
+
+.soporte-container {
+    font-size: 1rem;
+    margin-left: 0px;
+    padding: 5px;
+    background-color: #020021;
+    color: #fff;
+    text-align: center;
+    display: flex; /* Cambia a flexbox para alinear el contenido */
+    justify-content: space-between; /* Alinea los elementos al final y al principio */
+    align-items: center;
+}
+
+#ButtonVolver {
+    background-color: #fff;
+    color: #020021;
+    border: 2px solid #020021;
+    border-radius: 50%; /* Forma redonda */
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s; /* Transición suave */
+    margin-right: 10px; /* Margen a la derecha para separarlo del borde */
+}
+
+#ButtonVolver:hover {
+    background-color: #d0d0d0; /* Cambia el color al pasar el cursor */
+    transform: scale(1.1); /* Hace el botón más grande */
+}
+
+.Options-Busqueda {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;; /* Centrar elementos horizontalmente */
+  }
+  
+  .Options-Busqueda > div {
+    margin-bottom: 10px; /* Espacio entre las opciones */
+  }
+  
+  .Options-Busqueda a {
+    color: #020021; /* Color de la letra */
+    font-size: 20px; /* Tamaño de la fuente */
+  }
+
+
+  .desingtable {
+    margin: 0 auto; /* Alinea la tabla al centro */
+    width: 100%; /* Ocupa el ancho completo de su contenedor */
+  }
+  
+  table {
+    border-collapse: collapse; /* Colapsa los bordes de las celdas */
+    width: 100%; /* Ocupa el ancho completo de su contenedor */
+  }
+  
+  th, td {
+    border: 1px solid #dddddd; /* Añade bordes a las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 8px; /* Añade espacio interno a las celdas */
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+  }
+
+
+
+
+
+.modal-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #020021;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50px;
+  }
+  
+  button:hover {
+    background-color: #191c36;
+    transform: scale(1.1);
+  }
+
+
+  button {
+    /* Estilos comunes para todos los botones */
+    padding: 8px 16px; /* Padding más pequeño para los botones */
+    margin: 4px; /* Margen entre los botones */
+  }
+  
+  #openModalButton {
+    /* Estilos específicos para el botón "Resolver Caso" */
+    padding: 10px 20px; /* Padding original */
+  }
+  
+  #btntodosloscasos,
+  #btnCasosPorfiltro {
+    /* Estilos para los otros dos botones */
+    padding: 6px 12px; /* Padding más pequeño para los otros botones */
+  }
+
+/*  .modal-button-container {
+    position: center;
+    /*left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;}*/
+
+    .modal__paragraph {
+        text-align: center; /* Centra el texto */
+        font-size: 2em; /* Tamaño de la fuente */
+        font-weight: bold; /* Negrita */
+        color: #333; /* Color del texto */
+        margin-top: 20px; /* Espacio superior */
+    }
+
+
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Fondo oscuro semi-transparente */
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinea los elementos de arriba hacia abajo */
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrar verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; /* Ancho máximo del modal */
+}
+
+.contmodal {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #020021; /* Color del texto */
+    font-size: 20px; /* Tamaño de la fuente */
+    margin-bottom: 5px; /* Espacio entre los label */
+}
+
+input,
+select {
+    margin-bottom: 40px; /* Espacio entre los input y select */
+}
+
+.close {
+    color: #aaa;
+    align-self: flex-end; /* Alinea el elemento a la derecha */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

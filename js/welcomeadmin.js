@@ -18,6 +18,17 @@ document.getElementById("menuButton").addEventListener("click", function() {
   });
 
 
+// Obtener el botón por su ID
+const buttonSoporteTecnico = document.getElementById('ButtonSoportetecnico');
+
+// Agregar un event listener para escuchar el clic
+buttonSoporteTecnico.addEventListener('click', () => {
+      // Redireccionar a soportec.html
+    window.location.href = 'soportec.html';
+});
+
+
+
 const myModal = document.getElementById('myModal');
 const myModalCloseButton = document.getElementById('myModalClose');
 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Tecnico</title>
+    <link rel="stylesheet" href="styles/soportec.css">
+</head>
+<body>
+    <!--<img src="./images/imglogodesinguni.png"  class="imgfondo"> -->
+    <div class="soporte-container">
+        <h1 id="Bienve">Soporte Tecnico</h1>
+        <did class="ButtonVolver">
+            <button id="ButtonVolver">Volver</button>
+        </did>
+    </div>
+
+    <div class="modal-button-container">
+        <button id="openModalButton">Gestionar Caso</button>
+    </div>
+
+    <div class="Options-Busqueda">
+        <did>
+            <a>Todos los casos:</a>
+                <button id="btntodosloscasos">CONSULTAR</button>
+        </did>
+    
+        <did>
+            <a>Consulta casos por filtros:</a>
+            <input id="fechafiltro" placeholder="(AAAA-MM-DD)">
+            <input id="usuariofiltro" placeholder="ingrese el id_usuario">
+            <select id="opcionesfiltroestado" name="opciones">
+                <option value="">Seleccionar estado...</option>
+                <option value="opcion1">Activos</option>
+                <option value="opcion2">Resueltos</option>
+            </select>
+                <button id="btnCasosPorfiltro">CONSULTAR</button>
+        </did>
+    </did>
+
+    
+    <did class="desingtable">
+    <table id="tablaSoportes">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Asunto</th>
+                <th>Descripción</th>
+                <th>ID Usuario</th>
+                <th>Fecha</th>
+                <th>ID Estado</th>
+            </tr>
+        </thead>
+        <tbody id="tbodySoportes">
+            <!-- Aquí se agregarán las filas dinámicamente -->
+        </tbody>
+    </table>
+    </did>
+   
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="modal__paragraph">Gestionar Caso Soporte</h2>
+            <did class="contmodal">
+                <label for="soporteId">ID de Caso:</label>
+                <input type="text" id="soporteId">
+                <label for="nuevoEstadoId">Nuevo Estado:</label>
+                <select id="opcionesactualizar">
+                <option value="">Seleccionar estado...</option>
+                <option value="opcion1">Reactivar</option>
+                <option value="opcion2">Resuelto</option>
+            </select>
+            </did>
+            <button id="btnresolvermodal">ACTUALIZAR</button>
+        </div>
+    </div>
+
+
+
+    <script src="js/soportec.js"></script>  
+</body>
+</html>
