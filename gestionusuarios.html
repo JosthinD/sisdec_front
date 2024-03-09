@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Usuarios</title>
+    <link rel="stylesheet" href="styles/gestionusuarios.css">
+</head>
+<body>
+    <div class="auditoria-container">
+        <h1 id="titulo">Gestion de Usuarios</h1>
+        <did class="ButtonVolver">
+            <button id="ButtonVolver">Volver</button>
+        </did>
+    </div>
+
+    <div class="Options-Busqueda">
+        <did>
+            <a>Actualizar contraseña:</a>
+            <input id="correocont" placeholder="email">
+            <input id="contraseña" placeholder="new password">
+            <button id="btnguardarcontraseña">Guardar</button>
+        </did>
+    
+        <did>
+            <a>Actualizar estado:</a>
+            <input id="correoesta" placeholder="email">
+            <input id="nuevoEstadoId" placeholder="new estado">
+            <button id="btnguardarestado">Guardar</button>
+        </did>
+
+        <did>
+            <a>Actualizar rol:</a>
+            <input id="correorol" placeholder="email">
+            <input id="nuevoRolId" placeholder="new rol">
+            <button id="btnguardarrol">Guardar</button>
+        </did>
+
+        <did>
+            <a>Actualizar datos:</a>
+            <input id="correodato" placeholder="email">
+            <input id="telefono" placeholder="telefono">
+            <input id="primerNombre" placeholder="primer nombre">
+            <input id="segundoNombre" placeholder="segundo nombre">
+            <input id="primerApellido" placeholder="primer apellido">
+            <input id="segundoApellido" placeholder="segundo apellido">
+            <button id="btnguardardatos">Guardar</button>
+        </did>
+    </did>
+
+
+    <did class="desingtable">
+        <table id="tablainformacion">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>primerNombre</th>
+                <th>primerApellido</th>
+                <th>tipoDocumento</th>
+                <th>numeroDocumento</th>
+                <th>genero</th>
+                <th>correo</th>
+                <th>rol</th>
+                <th>estado</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyinfo">
+              <!-- Aquí se llenarán las filas con los datos de logs -->
+            </tbody>
+          </table>
+    </did>
+
+
+    <script src="js/gestionusuarios.js"></script> 
+</body>
+</html>

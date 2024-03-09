@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoria</title>
+    <link rel="stylesheet" href="styles/auditoria.css">
+</head>
+<body>
+    <!--<img src="./images/imglogodesinguni.png"  class="imgfondo"> -->
+    <div class="auditoria-container">
+        <h1 id="titulo">Auditoria</h1>
+        <did class="ButtonVolver">
+            <button id="ButtonVolver">Volver</button>
+        </did>
+    </div>
+
+    <did class="Opciones-Busqueda">
+        <a>Consultar registros:</a>
+        <input id="fechalogs" placeholder="(AAAA-MM-DD)">
+            <select id="opcionesacciones">
+                <option value="">Seleccionar accion...</option>
+                <option value="1">Agregar</option>
+                <option value="2">Eliminar</option>
+                <option value="3">Editar</option>
+                <option value="4">Crear</option>
+                <option value="5">Actualizar</option>
+            </select>
+        <button id="btnconsultarlogs">CONSULTAR</button>
+    </did>
+
+    <did class="desingtable">
+        <table id="tablaLogs">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>ID Acción</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="tbodylogs">
+              <!-- Aquí se llenarán las filas con los datos de logs -->
+            </tbody>
+          </table>
+    </did>
+
+
+
+    <script src="js/auditoria.js"></script> 
+</body>
+</html>

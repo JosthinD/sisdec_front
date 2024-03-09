@@ -27,6 +27,60 @@ buttonSoporteTecnico.addEventListener('click', () => {
     window.location.href = 'soportec.html';
 });
 
+// Obtener el botón por su ID
+const buttongestionusuarios = document.getElementById('ButtonGestionUsuarios');
+
+// Agregar un event listener para escuchar el clic
+buttongestionusuarios.addEventListener('click', () => {
+      // Redireccionar a soportec.html
+      fetch('https://localhost:7215/api/Users/GetAllUsers', {
+        method: 'GET',
+        headers: {
+            'Accept': '*/*'
+        }
+    })
+    .then((response) => response.json()) 
+    .then((result) => {
+        if (result.isSuccess) {
+            // Guardar la información en sessionStorage
+            sessionStorage.setItem('info', JSON.stringify(result.data));
+
+            // Redireccionar a auditoria.html
+            window.location.href = 'gestionusuarios.html';
+        }
+    })
+    .catch((error) => console.error(error));
+
+
+
+});
+
+// Obtener el botón por su ID
+const buttonAuditoria = document.getElementById('ButtonAuditoria');
+
+// Agregar un event listener para escuchar el clic
+buttonAuditoria.addEventListener('click', () => {
+    fetch('https://localhost:7215/api/Data/GetAllLogs', {
+        method: 'GET',
+        headers: {
+            'Accept': '*/*'
+        }
+    })
+    .then((response) => response.json()) 
+    .then((result) => {
+        if (result.isSuccess) {
+            // Guardar la información en sessionStorage
+            sessionStorage.setItem('logs', JSON.stringify(result.data));
+
+            // Redireccionar a auditoria.html
+            window.location.href = 'auditoria.html';
+        }
+    })
+    .catch((error) => console.error(error));
+});
+
+
+
 
 
 const myModal = document.getElementById('myModal');

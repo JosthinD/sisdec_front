@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Aquí se define el color blanco */
+}
+
+.auditoria-container{
+    font-size: 1rem;
+    margin-left: 0px;
+    padding: 5px;
+    background-color: #020021;
+    color: #fff;
+    text-align: center;
+    display: flex; /* Cambia a flexbox para alinear el contenido */
+    justify-content: space-between; /* Alinea los elementos al final y al principio */
+    align-items: center;
+}
+
+#ButtonVolver {
+    background-color: #fff;
+    color: #020021;
+    border: 2px solid #020021;
+    border-radius: 50%; /* Forma redonda */
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s; /* Transición suave */
+    margin-right: 10px; /* Margen a la derecha para separarlo del borde */
+}
+
+#ButtonVolver:hover {
+    background-color: #d0d0d0; /* Cambia el color al pasar el cursor */
+    transform: scale(1.1); /* Hace el botón más grande */
+}
+
+.desingtable {
+    margin: 20px; /* Alinea la tabla al centro */
+    width: 100%; /* Ocupa el ancho completo de su contenedor */
+  }
+  
+  table {
+    border-collapse: collapse; /* Colapsa los bordes de las celdas */
+    width: 100%; /* Ocupa el ancho completo de su contenedor */
+  }
+  
+  th, td {
+    border: 1px solid #dddddd; /* Añade bordes a las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 8px; /* Añade espacio interno a las celdas */
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+  }
+
+
+.Opciones-Busqueda {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Centrar elementos horizontalmente */
+}
+
+.Opciones-Busqueda > div {
+    margin-bottom: 10px; /* Espacio entre las opciones */
+}
+
+.Opciones-Busqueda a {
+    color: #020021; /* Color de la letra */
+    font-size: 20px; /* Tamaño de la fuente */
+}
+
+.Opciones-Busqueda input,
+.Opciones-Busqueda select {
+    padding: 5px; /* Espaciado interno */
+    margin-right: 10px; /* Espacio entre elementos */
+    border: 1px solid #ccc; /* Borde con color gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.Opciones-Busqueda input:focus,
+.Opciones-Busqueda select:focus {
+    outline: none; /* Eliminar el borde de enfoque */
+    border-color: #020021; /* Cambiar color de borde al enfocar */
+}
+
+
+#btnconsultarlogs {
+    background-color: #020021;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50px;
+    margin-top: 0px; /* Agrega margen superior */
+}
+
+#btnconsultarlogs:hover {
+    background-color: #191c36;
+    transform: scale(1.1);
+}

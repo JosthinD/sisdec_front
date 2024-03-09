@@ -79,7 +79,7 @@ async function obtenerCasosPorFiltro() {
             tbody.appendChild(fila);
         });
     } catch (error) {
-        console.error('Error al obtener los soportes por filtros:', error);
+        alert("No se encuentran registros asociados a los datos ingresados.");
     }
 }
 
