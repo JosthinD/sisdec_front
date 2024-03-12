@@ -80,7 +80,14 @@ buttonAuditoria.addEventListener('click', () => {
 });
 
 
+// Obtener el botón por su ID
+const buttonPruebaIA = document.getElementById('ButtonPruebaIA');
 
+// Agregar un event listener para escuchar el clic
+buttonPruebaIA.addEventListener('click', () => {
+      // Redireccionar a soportec.html
+    window.location.href = 'PruebaIA.html';
+});
 
 
 const myModal = document.getElementById('myModal');
