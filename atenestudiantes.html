@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reg Atencion a estudiantes</title>
+    <link rel="stylesheet" href="styles/atenestudiantes.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">Atencion a estudiantes</h1>
+        <did class="ButtonVolver">
+            <button id="ButtonVolver">Volver</button>
+        </did>
+    </div>
+
+    <div class="desingwport">
+        <table class="tableinfo">
+            <tr>
+                <th><a>Programa:</a></th>
+                <td id="idprograma" contenteditable="true" required placeholder="programa"></td>
+            </tr>
+            <tr>
+                <th><a>Director:</a></th>
+                <td id="iddirector" contenteditable="true"></td>
+            </tr>
+            <tr>
+                <th><a>Modulo:</a></th>
+                <td id="idmodulo" contenteditable="true"></td>
+            </tr>
+        </table>
+    </div>
+    
+
+    <div class="desingtable">
+        <table id="tabladata">
+            <thead>
+                <tr>
+                    <th>Fecha:</th>
+                    <th>Nombre y Apellido estudiante:</th>
+                    <th>Semestre:</th>
+                    <th>Grupo:</th>
+                    <th>Jornada:</th>
+                    <th>Motivo:</th>
+                    <th>Observaciones:</th>
+                    <th>Aprobacion estudiante:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><textarea id="idfecha"></textarea></td>
+                    <td><textarea id="idnomest"></textarea></td>
+                    <td><textarea id="idsemestre"></textarea></td>
+                    <td><textarea id="idgrupo"></textarea></td>
+                    <td><textarea id="idjornada"></textarea></td>
+                    <td><textarea id="idmotivo"></textarea></td>
+                    <td><textarea id="idobservaciones"></textarea></td>
+                    <td><textarea id="idaprobacionest"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    
+    <button id="btnguardar">Guardar</button>
+  
+        <script src="js/atenestudiantes.js"></script>
+        <script src="js/config.js"></script>
+</body>
+</html>

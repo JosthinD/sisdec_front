@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Color de fondo blanco */
+}
+
+.container {
+    font-size: 1rem;
+    padding: 10px 20px; /* Aumenta el espacio interno */
+    background-color: #020021;
+    color: #fff;
+    text-align: center;
+    display: flex; /* Usa flexbox para el diseño */
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ButtonVolver {
+    background-color: #fff;
+    color: #020021;
+    border: 2px solid #020021;
+    border-radius: 50%; /* Forma redonda */
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+#ButtonVolver:hover {
+    background-color: #d0d0d0;
+    transform: scale(1.1);
+}
+
+
+.desingwport {
+    display: flex;
+    justify-content: center;
+}
+
+.tableinfo {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.tableinfo th,
+.tableinfo td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    min-width: 100px; /* Tamaño estático para las celdas */
+    color: #020021; /* Color de la letra */
+    font-size: 18px; /* Tamaño de la fuente */
+}
+
+.tableinfo th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.centerone {
+    text-align: center; /* Alinea el texto al centro */
+    color: #020021; /* Color de la letra */
+    font-size: 20px; /* Tamaño de la fuente */
+}
+
+.desingonetable {
+    margin-left: 20px; /* Espaciado a la izquierda */
+    margin-right: 20px; /* Espaciado a la derecha */
+    width: calc(100% - 40px); /* Ocupa el ancho completo menos el espaciado */
+}
+
+.tableone {
+    border-collapse: collapse; /* Colapsa los bordes de las celdas */
+    width: 100%; /* Ocupa el ancho completo de su contenedor */
+}
+
+.tableone th {
+    border: 1px solid black; /* Añade bordes a las celdas */
+    background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    color: #020021; /* Color de la letra */
+    font-size: 18px; /* Tamaño de la fuente */
+}
+
+.tableone td {
+    border: 1px solid black; /* Añade bordes a las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 8px; /* Añade espacio interno a las celdas */
+    width: 100%; /* Ocupa el ancho restante */
+    color: #020021; /* Color de la letra */
+    font-size: 18px; /* Tamaño de la fuente */
+}
+
+.center {
+    text-align: center; /* Alinea el texto al centro */
+    color: #020021; /* Color de la letra */
+    font-size: 20px; /* Tamaño de la fuente */
+}
+
+.desingtextarea {
+    position: relative;
+    padding-left: 20px;
+}
+
+.desingtextarea textarea {
+    width: calc(80% - 120px); /* 80% del ancho del contenedor menos el espaciado y el ancho de los botones */
+    height: 150px;
+    resize: vertical;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block; /* Para que los botones se coloquen al lado */
+    vertical-align: top; /* Para alinear al principio del textarea */
+}
+
+.button-container-II {
+    display: inline-block; /* Para que los botones se coloquen al lado */
+    vertical-align: top; /* Para alinear al principio del textarea */
+    margin-left: 20px; /* Espacio entre el textarea y los botones */
+}
+
+.button-container {
+    display: inline-block; /* Para que los botones se coloquen al lado */
+    vertical-align: top; /* Para alinear al principio del textarea */
+    margin-left: 20px; /* Espacio entre el textarea y los botones */
+}
+
+
+button {
+    background-color: #020021;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50px;
+    margin-top: 10px; /* Agrega margen superior de 10px */
+    display: block; /* Convertir el botón en bloque para centrarlo */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+}
+
+button:hover {
+    background-color: #191c36;
+    transform: scale(1.1);
+}
+
+

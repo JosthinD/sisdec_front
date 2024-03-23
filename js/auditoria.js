@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const fecha = document.getElementById('fechalogs').value;
         const idAccion = document.getElementById('opcionesacciones').value;
 
-        const url = `https://localhost:7215/api/Data/GetLogsByActionIdAndDate?idAccion=${idAccion}&fecha=${fecha}`;
+        const url = `${window.config.SERVER_URL}api/Data/GetLogsByActionIdAndDate?idAccion=${idAccion}&fecha=${fecha}`;
         try {
             const response = await fetch(url, {
                 method: 'GET',
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         row.insertCell(3).textContent = new Date(log.dateLog).toLocaleString();
                     });
                     // Mostrar alerta con la respuesta del API
-                    alert(JSON.stringify(data));
+                    //alert(JSON.stringify(data));
                 } else {
                     console.error('Error en la respuesta del API:', data.message);
                 }

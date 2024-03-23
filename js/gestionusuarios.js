@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
             row.insertCell(4).textContent = inf.numeroDocumento;
             row.insertCell(5).textContent = inf.genero;
             row.insertCell(6).textContent = inf.correo;
-            row.insertCell(7).textContent = inf.rol;
-            row.insertCell(8).textContent = inf.estado;
+            row.insertCell(7).textContent = inf.telefono;
+            row.insertCell(8).textContent = inf.rol;
+            row.insertCell(9).textContent = inf.estado;
         });
     }
 });
@@ -36,7 +37,7 @@ buttoncontra.addEventListener('click', () => {
     const email = document.getElementById('correocont').value;
 
 
-    fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+    fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
         method: 'GET',
         headers: {
           'accept': '*/*'
@@ -53,7 +54,7 @@ buttoncontra.addEventListener('click', () => {
             const contraseña = document.getElementById('contraseña').value;
 
             
-            fetch(`https://localhost:7215/api/Users/UpdateUserPassword?userId=${userId}&contraseña=${contraseña}`, {
+            fetch(`${window.config.SERVER_URL}api/Users/UpdateUserPassword?userId=${userId}&contraseña=${contraseña}`, {
 
             method: 'PUT',
             headers: {
@@ -79,7 +80,7 @@ buttonesta.addEventListener('click', () => {
     const email = document.getElementById('correoesta').value;
 
 
-    fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+    fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
         method: 'GET',
         headers: {
           'accept': '*/*'
@@ -96,7 +97,7 @@ buttonesta.addEventListener('click', () => {
             const nuevoEstadoId = document.getElementById('nuevoEstadoId').value;
 
             
-            fetch(`https://localhost:7215/api/Users/UpdateUserState?userId=${userId}&nuevoEstadoId=${nuevoEstadoId}`, {
+            fetch(`${window.config.SERVER_URL}api/Users/UpdateUserState?userId=${userId}&nuevoEstadoId=${nuevoEstadoId}`, {
 
             method: 'PUT',
             headers: {
@@ -122,7 +123,7 @@ buttonrol.addEventListener('click', () => {
     const email = document.getElementById('correorol').value;
 
 
-    fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+    fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
         method: 'GET',
         headers: {
           'accept': '*/*'
@@ -139,7 +140,7 @@ buttonrol.addEventListener('click', () => {
             const nuevoRolId = document.getElementById('nuevoRolId').value;
 
             
-            fetch(`https://localhost:7215/api/Users/UpdateUserState?userId=${userId}&nuevoEstadoId=${nuevoRolId}`, {
+            fetch(`${window.config.SERVER_URL}api/Users/UpdateUserState?userId=${userId}&nuevoEstadoId=${nuevoRolId}`, {
 
             method: 'PUT',
             headers: {
@@ -166,7 +167,7 @@ buttondatos.addEventListener('click', () => {
     const email = document.getElementById('correodato').value;
 
 
-    fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+    fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
         method: 'GET',
         headers: {
           'accept': '*/*'
@@ -191,7 +192,7 @@ buttondatos.addEventListener('click', () => {
             const correo = document.getElementById('correodato').value;
 
 
-            fetch('https://localhost:7215/api/Users/PutDataUser', {
+            fetch(`${window.config.SERVER_URL}api/Users/PutDataUser`, {
                 method: 'PUT',
                 headers: {
                     'Accept': '*/*',

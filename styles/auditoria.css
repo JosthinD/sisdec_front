@@ -1,18 +1,17 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #fff; /* Aquí se define el color blanco */
+    background-color: #fff; /* Color de fondo blanco */
 }
 
-.auditoria-container{
+.container {
     font-size: 1rem;
-    margin-left: 0px;
-    padding: 5px;
+    padding: 10px 20px; /* Aumenta el espacio interno */
     background-color: #020021;
     color: #fff;
     text-align: center;
-    display: flex; /* Cambia a flexbox para alinear el contenido */
-    justify-content: space-between; /* Alinea los elementos al final y al principio */
+    display: flex; /* Usa flexbox para el diseño */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -23,13 +22,13 @@ body {
     border-radius: 50%; /* Forma redonda */
     padding: 10px 20px;
     font-size: 16px;
-    transition: all 0.3s; /* Transición suave */
-    margin-right: 10px; /* Margen a la derecha para separarlo del borde */
+    transition: all 0.3s;
+    margin-right: 10px;
 }
 
 #ButtonVolver:hover {
-    background-color: #d0d0d0; /* Cambia el color al pasar el cursor */
-    transform: scale(1.1); /* Hace el botón más grande */
+    background-color: #d0d0d0;
+    transform: scale(1.1);
 }
 
 .desingtable {

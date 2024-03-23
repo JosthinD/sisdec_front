@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reg Plan de accion</title>
+    <link rel="stylesheet" href="styles/planaccion.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">Registrar Plan de Accion</h1>
+        <did class="ButtonVolver">
+            <button id="ButtonVolver">Volver</button>
+        </did>
+    </div>
+
+    <div class="desingwport">
+        <table class="tableinfo">
+            <tr>
+                <th><a>programa:</a></th>
+                <td id="idprograma" contenteditable="true"></td>
+            </tr>
+            <tr>
+                <th><a>fecha:</a></th>
+                <td id="idfecha" contenteditable="true"></td>
+            </tr>
+            <tr>
+                <th><a>director:</a></th>
+                <td id="iddirector" contenteditable="true"></td>
+            </tr>
+        </table>
+    </div>
+    
+
+    <div class="desingtable">
+        <table id="tabladata">
+            <thead>
+                <tr>
+                    <th>fechaDos</th>
+                    <th>actividad:</th>
+                    <th>descripcion:</th>
+                    <th>duracion:</th>
+                    <th>lugar:</th>
+                    <th>horaInicio:</th>
+                    <th>horaFin:</th>
+                    <th>responsable:</th>
+                    <th>participantes:</th>
+                    <th>evidencias:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><textarea id="idfechaDos"></textarea></td>
+                    <td><textarea id="idactividad"></textarea></td>
+                    <td><textarea id="iddescripcion"></textarea></td>
+                    <td><textarea id="idduracion"></textarea></td>
+                    <td><textarea id="idlugar"></textarea></td>
+                    <td><textarea id="idhoraInicio"></textarea></td>
+                    <td><textarea id="idhoraFin"></textarea></td>
+                    <td><textarea id="idresponsable"></textarea></td>
+                    <td><textarea id="idparticipantes"></textarea></td>
+                    <td><textarea id="idevidencias"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    
+    <button id="btnguardar">Guardar</button>
+    
+
+    
+    <script src="js/planaccion.js"></script>
+    <script src="js/config.js"></script>
+</body>
+</html>

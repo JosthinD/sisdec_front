@@ -15,7 +15,7 @@ document.getElementById("send").addEventListener("click", function() {
 const email_pw = document.getElementById("email_pw").value;
 
 // Realizar la solicitud FETCH para obtener los datos del usuario
-fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email_pw}`, {
+fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email_pw}`, {
     method: 'GET',
     headers: {
         'accept': '*/*'
@@ -29,7 +29,7 @@ fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email_pw}`, {
           sessionStorage.setItem('usuario', JSON.stringify(result));
 
           const usuario = JSON.parse(sessionStorage.getItem('usuario'));
-          const idUsuario = usuario.data.id;;
+          const idUsuario = usuario.data.id;
 
           const myHeaders = new Headers();
           myHeaders.append("accept", "*/*");
@@ -48,7 +48,7 @@ fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email_pw}`, {
                 redirect: "follow"
             };
 
-            fetch("https://localhost:7215/api/Support/NewSoporte", requestOptions)
+            fetch(`${window.config.SERVER_URL}api/Support/NewSoporte`, requestOptions)
             .then((response) => response.json()) // Convertir la respuesta a JSON
             .then((result) => {
                 alert(result.message+("<<Se ha enviado la novedad al administrador, espere respuesta.>>")); // Mostrar la respuesta en una alerta
@@ -75,7 +75,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
   sessionStorage.setItem('email', email);
 
-  fetch(`https://localhost:7215/api/Login?email=${email}&password=${password}`, {
+  fetch(`${window.config.SERVER_URL}api/Login?email=${email}&password=${password}`, {
     method: 'GET',
     headers: {
       'accept': '*/*'
@@ -90,7 +90,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
       const email = document.getElementById('email').value;
 
-      fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+      fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
       method: 'GET',
       headers: {
         'accept': '*/*'

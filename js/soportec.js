@@ -9,7 +9,7 @@ buttonvolver.addEventListener('click', () => {
 
 // Función para obtener y mostrar los registros de la API según el estado seleccionado
 async function obtenertodosloscasos() {
-    const url = `https://localhost:7215/api/Support/GetAllSoportes`;
+    const url = `${window.config.SERVER_URL}api/Support/GetAllSoportes`;
 
     try {
         const response = await fetch(url);
@@ -57,7 +57,7 @@ async function obtenerCasosPorFiltro() {
     const fechafiltro = document.getElementById('fechafiltro').value;
     const idusufiltro = document.getElementById('usuariofiltro').value;
     const estadoId = select.value === '' ? '' : (select.value === 'opcion1' ? 1 : 2); // Asigna el estadoId según la opción seleccionada (1 para "Activos", 2 para "Resueltos")
-    const url = `https://localhost:7215/api/Support/GetSoportesByFilters?fecha=${fechafiltro}&userId=${idusufiltro}&estadoId=${estadoId}`;
+    const url = `${window.config.SERVER_URL}api/Support/GetSoportesByFilters?fecha=${fechafiltro}&userId=${idusufiltro}&estadoId=${estadoId}`;
 
     try {
         // Realizar la solicitud GET usando fetch
@@ -125,7 +125,7 @@ async function actualizarcaso() {
     const soporteId = document.getElementById('soporteId').value;
     const select = document.getElementById('opcionesactualizar');
     const nuevoEstadoId = select.value === '' ? '' : (select.value === 'opcion1' ? 1 : 2);
-    const url = `https://localhost:7215/api/Support/UpdateSoporteEstado?`;
+    const url = `${window.config.SERVER_URL}api/Support/UpdateSoporteEstado?`;
 
     fetch(url, {
         method: 'PUT',

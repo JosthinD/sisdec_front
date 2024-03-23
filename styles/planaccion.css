@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Color de fondo blanco */
+}
+
+.container {
+    font-size: 1rem;
+    padding: 10px 20px; /* Aumenta el espacio interno */
+    background-color: #020021;
+    color: #fff;
+    text-align: center;
+    display: flex; /* Usa flexbox para el diseño */
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ButtonVolver {
+    background-color: #fff;
+    color: #020021;
+    border: 2px solid #020021;
+    border-radius: 50%; /* Forma redonda */
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+#ButtonVolver:hover {
+    background-color: #d0d0d0;
+    transform: scale(1.1);
+}
+
+.desingwport {
+    display: flex;
+    justify-content: center;
+}
+
+.tableinfo {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.tableinfo th,
+.tableinfo td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    min-width: 100px; /* Tamaño estático para las celdas */
+    color: #020021; /* Color de la letra */
+    font-size: 18px; /* Tamaño de la fuente */
+}
+
+.tableinfo th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+.desingtable {
+    margin: 15px 0; /* Agrega espacio arriba y abajo, sin espacio a los lados */
+}
+
+#tabladata {
+    width: calc(100vw - 40px); /* Usar el 100% del ancho de la ventana menos el espacio de los márgenes */
+    max-width: none; /* No establecer un máximo de ancho */
+    margin: 0 auto; /* Centrar la tabla horizontalmente */
+}
+
+#tabladata th,
+#tabladata td {
+    white-space: nowrap; /* Evitar que el texto se ajuste automáticamente */
+    color: #020021; /* Color de la letra */
+    font-size: 18px; /* Tamaño de la fuente */
+}
+
+/* Ajustes para los textarea */
+textarea {
+    width: 99%; /* Ocupar todo el ancho disponible */
+    height: 300px; /* Establecer una altura mínima */
+    resize: vertical; /* Permitir que se ajuste verticalmente */
+}
+
+
+#btnguardar {
+    background-color: #020021;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50px;
+    margin-top: 10px; /* Agrega margen superior de 10px */
+    display: block; /* Convertir el botón en bloque para centrarlo */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+}
+
+#btnguardar:hover {
+    background-color: #191c36;
+    transform: scale(1.1);
+}
+
+
+

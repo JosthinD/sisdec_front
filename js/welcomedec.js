@@ -1,10 +1,3 @@
-//document.addEventListener("DOMContentLoaded", function() {
-//    var usuario = JSON.parse(sessionStorage.getItem('usuario')) || {};
-//    var datosUsuario = ("ID Usuario:" + usuario.data.id + " " +"Nombre:" + usuario.data.primerNombre);
-
-//    document.getElementById('nombreUsuario').innerText = datosUsuario;
-//});
-
 document.addEventListener("DOMContentLoaded", function() {
     var usuario = JSON.parse(sessionStorage.getItem('usuario'));
 
@@ -15,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-//const userIdpri = document.getElementById('id_use').value;
-
 document.getElementById("menuButton").addEventListener("click", function() {
     var menuContainer = document.getElementById("menuContainer");
     if (menuContainer.style.display !== "block") {
@@ -26,13 +17,34 @@ document.getElementById("menuButton").addEventListener("click", function() {
     }
   });
 
+  
 
-const myModal = document.getElementById('myModal');
-const myModalCloseButton = document.getElementById('myModalClose');
+const buttonPlandeAccion = document.getElementById('Buttonplanaccion');
 
-myModalCloseButton.addEventListener('click', () => {
-    myModal.style.display = 'none';
+
+buttonPlandeAccion.addEventListener('click', () => {
+
+    window.location.href = 'planaccion.html';
 });
+
+
+const buttonPracporasig = document.getElementById('Buttonpractasigna');
+
+
+buttonPracporasig.addEventListener('click', () => {
+
+    window.location.href = 'pracporasig.html';
+});
+
+
+const buttonatenestu = document.getElementById('Buttonatenestudi');
+
+
+buttonatenestu.addEventListener('click', () => {
+
+    window.location.href = 'atenestudiantes.html';
+});
+
 
 const cerrarSesionButton = document.querySelector('button[data-action="cerrar-sesion"]');
 
@@ -50,7 +62,7 @@ editUserButton.addEventListener('click', () => {
 
 
     // Realizar la solicitud FETCH para obtener los datos del usuario
-    fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+    fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
         method: 'GET',
         headers: {
           'accept': '*/*'
@@ -109,7 +121,7 @@ enviarButton.addEventListener('click', (event) => {
         redirect: "follow"
     };
 
-    fetch("https://localhost:7215/api/Users/PutDataUser", requestOptions)
+    fetch(`${window.config.SERVER_URL}api/Users/PutDataUser`, requestOptions)
     .then((response) => response.json()) // Convertir la respuesta a JSON
     .then((result) => {
         alert(result.message); // Mostrar la respuesta en una alerta
@@ -133,7 +145,7 @@ cambiarContraseñaButton.addEventListener('click', () => {
   cambiarContraseñaModal.style.display = 'block';
 
   // Realizar la solicitud FETCH para obtener los datos del usuario
-  fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+  fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
       method: 'GET',
       headers: {
         'accept': '*/*'
@@ -177,7 +189,7 @@ enviarcontrButton.addEventListener('click', (event) => {
         const userId = document.getElementById('id_user').value;
         const oldPassword = document.getElementById('oldPassword').value;
 
-        fetch(`https://localhost:7215/api/Users/VerifyPasswordForUser?userId=${userId}&contraseña=${oldPassword}`, {
+        fetch(`${window.config.SERVER_URL}api/Users/VerifyPasswordForUser?userId=${userId}&contraseña=${oldPassword}`, {
         method: 'GET',
         headers: {
             'Accept': '*/*'
@@ -203,7 +215,7 @@ enviarcontrButton.addEventListener('click', (event) => {
                 redirect: 'follow'
                 };
 
-                fetch(`https://localhost:7215/api/Users/UpdateUserPassword?userId=${userId}&contraseña=${newPassword}`, requestOptions)
+                fetch(`${window.config.SERVER_URL}api/Users/UpdateUserPassword?userId=${userId}&contraseña=${newPassword}`, requestOptions)
                 .then((response) => response.json()) // Convertir la respuesta a JSON
                 .then((result) => {
                     alert(result.message); // Mostrar la respuesta en una alerta

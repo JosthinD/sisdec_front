@@ -33,7 +33,7 @@ const buttongestionusuarios = document.getElementById('ButtonGestionUsuarios');
 // Agregar un event listener para escuchar el clic
 buttongestionusuarios.addEventListener('click', () => {
       // Redireccionar a soportec.html
-      fetch('https://localhost:7215/api/Users/GetAllUsers', {
+      fetch(`${window.config.SERVER_URL}api/Users/GetAllUsers`, {
         method: 'GET',
         headers: {
             'Accept': '*/*'
@@ -60,7 +60,7 @@ const buttonAuditoria = document.getElementById('ButtonAuditoria');
 
 // Agregar un event listener para escuchar el clic
 buttonAuditoria.addEventListener('click', () => {
-    fetch('https://localhost:7215/api/Data/GetAllLogs', {
+    fetch(`${window.config.SERVER_URL}api/Data/GetAllLogs`, {
         method: 'GET',
         headers: {
             'Accept': '*/*'
@@ -113,7 +113,7 @@ editUserButton.addEventListener('click', () => {
 
 
     // Realizar la solicitud FETCH para obtener los datos del usuario
-    fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+    fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
         method: 'GET',
         headers: {
           'accept': '*/*'
@@ -172,7 +172,7 @@ enviarButton.addEventListener('click', (event) => {
         redirect: "follow"
     };
 
-    fetch("https://localhost:7215/api/Users/PutDataUser", requestOptions)
+    fetch(`${window.config.SERVER_URL}api/Users/PutDataUser`, requestOptions)
     .then((response) => response.json()) // Convertir la respuesta a JSON
     .then((result) => {
         alert(result.message); // Mostrar la respuesta en una alerta
@@ -196,7 +196,7 @@ cambiarContraseñaButton.addEventListener('click', () => {
   cambiarContraseñaModal.style.display = 'block';
 
   // Realizar la solicitud FETCH para obtener los datos del usuario
-  fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+  fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
       method: 'GET',
       headers: {
         'accept': '*/*'
@@ -240,7 +240,7 @@ enviarcontrButton.addEventListener('click', (event) => {
         const userId = document.getElementById('id_user').value;
         const oldPassword = document.getElementById('oldPassword').value;
 
-        fetch(`https://localhost:7215/api/Users/VerifyPasswordForUser?userId=${userId}&contraseña=${oldPassword}`, {
+        fetch(`${window.config.SERVER_URL}api/Users/VerifyPasswordForUser?userId=${userId}&contraseña=${oldPassword}`, {
         method: 'GET',
         headers: {
             'Accept': '*/*'
@@ -266,7 +266,7 @@ enviarcontrButton.addEventListener('click', (event) => {
                 redirect: 'follow'
                 };
 
-                fetch(`https://localhost:7215/api/Users/UpdateUserPassword?userId=${userId}&contraseña=${newPassword}`, requestOptions)
+                fetch(`${window.config.SERVER_URL}api/Users/UpdateUserPassword?userId=${userId}&contraseña=${newPassword}`, requestOptions)
                 .then((response) => response.json()) // Convertir la respuesta a JSON
                 .then((result) => {
                     alert(result.message); // Mostrar la respuesta en una alerta
