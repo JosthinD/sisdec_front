@@ -110,23 +110,26 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         sessionStorage.setItem('email', email); // Guardar el email en la sesión
         
         switch(result.data.rol) {
-        case 'Administrador':
-            window.location.href = 'welcomeadmin.html';
+          case 'Administrador':
+              window.location.href = 'welcomeadmin.html';
 
-            break;
+              sessionStorage.setItem('isLoggedIn', 'true');
+
+              break;
           case 'Decano':
-            window.location.href = 'welcomedec.html';
+              window.location.href = 'welcomedec.html';
 
-            break;
+              sessionStorage.setItem('isLoggedIn', 'true');
+              break;
           case 'Maestro':
-            window.location.href = 'welcomeprof.html';
+              window.location.href = 'welcomeprof.html';
 
-            break;
+              sessionStorage.setItem('isLoggedIn', 'true');
+              break;
           default:
-            // Redirigir a una página de error u otra página por defecto
-            window.location.href = 'welcomeadmin.html';
-            break;
-          }
+              // Redirigir a una página de error u otra página por defecto
+              break;
+      }      
         })
    
       .catch((error) => console.error(error));

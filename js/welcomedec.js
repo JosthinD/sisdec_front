@@ -45,6 +45,30 @@ buttonatenestu.addEventListener('click', () => {
     window.location.href = 'atenestudiantes.html';
 });
 
+const buttonconsplanaccion = document.getElementById('Buttonconsplanaccion');
+
+// Este codigo es para la consulta de plan de accion:
+buttonconsplanaccion.addEventListener('click', () => {
+
+    fetch(`${window.config.SERVER_URL}api/Documents/GetAllPlanAccionAcademico`, {
+        method: 'GET',
+        headers: {
+            'Accept': '*/*'
+        }
+    })
+    .then((response) => response.json()) 
+    .then((result) => {
+        if (result.isSuccess) {
+
+            sessionStorage.setItem('datee', JSON.stringify(result.data));
+
+            window.location.href = 'consplanaccion.html';
+        }
+    })
+    .catch((error) => console.error(error));
+});
+
+//// aqui se acaba el codigo de consulta plan de accion
 
 const cerrarSesionButton = document.querySelector('button[data-action="cerrar-sesion"]');
 

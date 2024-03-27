@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 const data = await response.json();
                 if (data.isSuccess) {
-                    // Limpiar tabla
+
                     tablaLogs.innerHTML = '';
-                    // Llenar tabla con los nuevos datos
+
                     data.data.forEach(function(log) {
                         var row = tablaLogs.insertRow();
                         row.insertCell(0).textContent = log.id;
@@ -56,8 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         row.insertCell(2).textContent = log.descripcion;
                         row.insertCell(3).textContent = new Date(log.dateLog).toLocaleString();
                     });
-                    // Mostrar alerta con la respuesta del API
-                    //alert(JSON.stringify(data));
+
                 } else {
                     console.error('Error en la respuesta del API:', data.message);
                 }

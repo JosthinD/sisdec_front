@@ -7,201 +7,294 @@ buttonvolver.addEventListener('click', () => {
 });
 
 
-const autputintro = document.getElementById('introduccion');
-const outputobjge = document.getElementById('objgeneral');
-const outputobjes = document.getElementById('objespecifico');
-const outputdescr = document.getElementById('descip');
-const outputobjet = document.getElementById('objetos');
-const outputresul = document.getElementById('resultados');
-const outputevalu = document.getElementById('evaluacion');
-
-
-
-
-//ESTE CODIGO IA PARA EL DATO INTRODUCCION:
-const startBtnuno = document.getElementById('start1');
-const stopBtnuno = document.getElementById('stop1');
-
-const recognition = new webkitSpeechRecognition(); // Para navegadores que no soportan la última API, usar: new SpeechRecognition();
-recognition.lang = 'es-ES'; // Establecer el idioma de reconocimiento
-
-startBtnuno.addEventListener('click', () => {
-    recognition.start();
-    autputintro.textContent = 'Escuchando...';
-});
-
-stopBtnuno.addEventListener('click', () => {
-    recognition.stop();
-    autputintro.textContent = 'Detenido';
-});
-
-recognition.addEventListener('result', (event) => {
-    const transcript = event.results[0][0].transcript;
-    autputintro.textContent = transcript;
-});
-
-recognition.addEventListener('error', (event) => {
-  autputintro.textContent = 'Error: ' + event.error;
-});
-
-//ESTE CODIGO IA PARA EL DATO OBJETIVO GENERAL:
-
-const startBtn2 = document.getElementById('start2');
-const stopBtn2 = document.getElementById('stop2');
-
-const recognition = new webkitSpeechRecognition(); // Para navegadores que no soportan la última API, usar: new SpeechRecognition();
-recognition.lang = 'es-ES'; // Establecer el idioma de reconocimiento
-
-startBtn2.addEventListener('click', () => {
-    recognition.start();
-    outputobjge.textContent = 'Escuchando...';
-});
-
-stopBtn2.addEventListener('click', () => {
-    recognition.stop();
-    outputobjge.textContent = 'Detenido';
-});
-
-recognition.addEventListener('result', (event) => {
-    const transcript = event.results[0][0].transcript;
-    outputobjge.textContent = transcript;
-});
-
-recognition.addEventListener('error', (event) => {
-  outputobjge.textContent = 'Error: ' + event.error;
-});
-
-//ESTE CODIGO IA PARA EL DATO OBJETIVOS ESPECIFICOS:
-
-const startBtn3 = document.getElementById('start3');
-const stopBtn3 = document.getElementById('stop3');
+const output = document.getElementById('introduccion');
+const startBtn = document.getElementById('startuno');
+const stopBtn = document.getElementById('stopuno');
 
 const recognition = new webkitSpeechRecognition(); // Para navegadores que no soportan la última API, usar: new SpeechRecognition();
 recognition.lang = 'es-ES'; // Establecer el idioma de reconocimiento
 
 startBtn.addEventListener('click', () => {
     recognition.start();
-    outputobjes.textContent = 'Escuchando...';
+    output.value = 'Escuchando...'; // Usar 'value' en lugar de 'textContent'
 });
 
 stopBtn.addEventListener('click', () => {
     recognition.stop();
-    outputobjes.textContent = 'Detenido';
+    output.value = 'Detenido'; // Usar 'value' en lugar de 'textContent'
 });
 
 recognition.addEventListener('result', (event) => {
     const transcript = event.results[0][0].transcript;
-    outputobjes.textContent = transcript;
+    output.value = transcript; // Usar 'value' en lugar de 'textContent'
 });
 
 recognition.addEventListener('error', (event) => {
-  outputobjes.textContent = 'Error: ' + event.error;
+    output.value = 'Error: ' + event.error; // Usar 'value' en lugar de 'textContent'
 });
 
-//ESTE CODIGO IA PARA EL DATO DESCRIPCION O EVIDENCIAS:
+// Segundo textarea
+const outputObjGeneral = document.getElementById('objgeneral');
+const startBtnObjGeneral = document.getElementById('startdos');
+const stopBtnObjGeneral = document.getElementById('stopdos');
 
-const startBtn4 = document.getElementById('start4');
-const stopBtn4 = document.getElementById('stop4');
+const recognitionObjGeneral = new webkitSpeechRecognition();
+recognitionObjGeneral.lang = 'es-ES';
 
-const recognition = new webkitSpeechRecognition(); // Para navegadores que no soportan la última API, usar: new SpeechRecognition();
-recognition.lang = 'es-ES'; // Establecer el idioma de reconocimiento
-
-startBtn.addEventListener('click', () => {
-    recognition.start();
-    outputdescr.textContent = 'Escuchando...';
+startBtnObjGeneral.addEventListener('click', () => {
+    recognitionObjGeneral.start();
+    outputObjGeneral.textContent = 'Escuchando...';
 });
 
-stopBtn.addEventListener('click', () => {
-    recognition.stop();
-    outputdescr.textContent = 'Detenido';
+stopBtnObjGeneral.addEventListener('click', () => {
+    recognitionObjGeneral.stop();
+    outputObjGeneral.textContent = 'Detenido';
 });
 
-recognition.addEventListener('result', (event) => {
+recognitionObjGeneral.addEventListener('result', (event) => {
     const transcript = event.results[0][0].transcript;
-    outputdescr.textContent = transcript;
+    outputObjGeneral.textContent = transcript;
 });
 
-recognition.addEventListener('error', (event) => {
-  outputdescr.textContent = 'Error: ' + event.error;
+recognitionObjGeneral.addEventListener('error', (event) => {
+    outputObjGeneral.textContent = 'Error: ' + event.error;
 });
 
-//ESTE CODIGO IA PARA EL DATO OBJETOS
 
-const startBtn5 = document.getElementById('start5');
-const stopBtn5 = document.getElementById('stop5');
+// Tercer textarea
+const outputObjEspecifico = document.getElementById('objespecifico');
+const startBtnObjEspecifico = document.getElementById('starttres');
+const stopBtnObjEspecifico = document.getElementById('stoptres');
 
-const recognition = new webkitSpeechRecognition(); // Para navegadores que no soportan la última API, usar: new SpeechRecognition();
-recognition.lang = 'es-ES'; // Establecer el idioma de reconocimiento
+const recognitionObjEspecifico = new webkitSpeechRecognition();
+recognitionObjEspecifico.lang = 'es-ES';
 
-startBtn.addEventListener('click', () => {
-    recognition.start();
-    outputobjet.textContent = 'Escuchando...';
+startBtnObjEspecifico.addEventListener('click', () => {
+    recognitionObjEspecifico.start();
+    outputObjEspecifico.textContent = 'Escuchando...';
 });
 
-stopBtn.addEventListener('click', () => {
-    recognition.stop();
-    outputobjet.textContent = 'Detenido';
+stopBtnObjEspecifico.addEventListener('click', () => {
+    recognitionObjEspecifico.stop();
+    outputObjEspecifico.textContent = 'Detenido';
 });
 
-recognition.addEventListener('result', (event) => {
+recognitionObjEspecifico.addEventListener('result', (event) => {
     const transcript = event.results[0][0].transcript;
-    outputobjet.textContent = transcript;
+    outputObjEspecifico.textContent = transcript;
 });
 
-recognition.addEventListener('error', (event) => {
-  outputobjet.textContent = 'Error: ' + event.error;
+recognitionObjEspecifico.addEventListener('error', (event) => {
+    outputObjEspecifico.textContent = 'Error: ' + event.error;
 });
 
-//ESTE CODIGO IA PARA EL DATO RESULTADOS:
 
-const startBtn6 = document.getElementById('start6');
-const stopBtn6 = document.getElementById('stop6');
+// Cuarto textarea
+const outputDescip = document.getElementById('descip');
+const startBtnDescip = document.getElementById('startcuatro');
+const stopBtnDescip = document.getElementById('stopcuatro');
 
-const recognition = new webkitSpeechRecognition(); // Para navegadores que no soportan la última API, usar: new SpeechRecognition();
-recognition.lang = 'es-ES'; // Establecer el idioma de reconocimiento
+const recognitionDescip = new webkitSpeechRecognition();
+recognitionDescip.lang = 'es-ES';
 
-startBtn.addEventListener('click', () => {
-    recognition.start();
-    outputresul.textContent = 'Escuchando...';
+startBtnDescip.addEventListener('click', () => {
+    recognitionDescip.start();
+    outputDescip.textContent = 'Escuchando...';
 });
 
-stopBtn.addEventListener('click', () => {
-    recognition.stop();
-    outputresul.textContent = 'Detenido';
+stopBtnDescip.addEventListener('click', () => {
+    recognitionDescip.stop();
+    outputDescip.textContent = 'Detenido';
 });
 
-recognition.addEventListener('result', (event) => {
+recognitionDescip.addEventListener('result', (event) => {
     const transcript = event.results[0][0].transcript;
-    outputresul.textContent = transcript;
+    outputDescip.textContent = transcript;
 });
 
-recognition.addEventListener('error', (event) => {
-  outputresul.textContent = 'Error: ' + event.error;
+recognitionDescip.addEventListener('error', (event) => {
+    outputDescip.textContent = 'Error: ' + event.error;
 });
 
-//ESTE CODIGO IA PARA EL DATO EVALUACION:
 
-const startBtn7 = document.getElementById('start7');
-const stopBtn7 = document.getElementById('stop7');
+// Quinto textarea
+const outputObjetos = document.getElementById('objetos');
+const startBtnObjetos = document.getElementById('startcinco');
+const stopBtnObjetos = document.getElementById('stopcinco');
 
-const recognition = new webkitSpeechRecognition(); // Para navegadores que no soportan la última API, usar: new SpeechRecognition();
-recognition.lang = 'es-ES'; // Establecer el idioma de reconocimiento
+const recognitionObjetos = new webkitSpeechRecognition();
+recognitionObjetos.lang = 'es-ES';
 
-startBtn.addEventListener('click', () => {
-    recognition.start();
-    outputevalu.textContent = 'Escuchando...';
+startBtnObjetos.addEventListener('click', () => {
+    recognitionObjetos.start();
+    outputObjetos.textContent = 'Escuchando...';
 });
 
-stopBtn.addEventListener('click', () => {
-    recognition.stop();
-    outputevalu.textContent = 'Detenido';
+stopBtnObjetos.addEventListener('click', () => {
+    recognitionObjetos.stop();
+    outputObjetos.textContent = 'Detenido';
 });
 
-recognition.addEventListener('result', (event) => {
+recognitionObjetos.addEventListener('result', (event) => {
     const transcript = event.results[0][0].transcript;
-    outputevalu.textContent = transcript;
+    outputObjetos.textContent = transcript;
 });
 
-recognition.addEventListener('error', (event) => {
-  outputevalu.textContent = 'Error: ' + event.error;
+recognitionObjetos.addEventListener('error', (event) => {
+    outputObjetos.textContent = 'Error: ' + event.error;
 });
+
+
+// Sexto textarea
+const outputResultados = document.getElementById('resultados');
+const startBtnResultados = document.getElementById('startsexto');
+const stopBtnResultados = document.getElementById('stopsexto');
+
+const recognitionResultados = new webkitSpeechRecognition();
+recognitionResultados.lang = 'es-ES';
+
+startBtnResultados.addEventListener('click', () => {
+    recognitionResultados.start();
+    outputResultados.textContent = 'Escuchando...';
+});
+
+stopBtnResultados.addEventListener('click', () => {
+    recognitionResultados.stop();
+    outputResultados.textContent = 'Detenido';
+});
+
+recognitionResultados.addEventListener('result', (event) => {
+    const transcript = event.results[0][0].transcript;
+    outputResultados.textContent = transcript;
+});
+
+recognitionResultados.addEventListener('error', (event) => {
+    outputResultados.textContent = 'Error: ' + event.error;
+});
+
+
+// Séptimo textarea
+const outputEvaluacion = document.getElementById('evaluacion');
+const startBtnEvaluacion = document.getElementById('startseptimo');
+const stopBtnEvaluacion = document.getElementById('stopseptimo');
+
+const recognitionEvaluacion = new webkitSpeechRecognition();
+recognitionEvaluacion.lang = 'es-ES';
+
+startBtnEvaluacion.addEventListener('click', () => {
+    recognitionEvaluacion.start();
+    outputEvaluacion.textContent = 'Escuchando...';
+});
+
+stopBtnEvaluacion.addEventListener('click', () => {
+    recognitionEvaluacion.stop();
+    outputEvaluacion.textContent = 'Detenido';
+});
+
+recognitionEvaluacion.addEventListener('result', (event) => {
+    const transcript = event.results[0][0].transcript;
+    outputEvaluacion.textContent = transcript;
+});
+
+recognitionEvaluacion.addEventListener('error', (event) => {
+    outputEvaluacion.textContent = 'Error: ' + event.error;
+});
+
+
+const btnguardar = document.getElementById('btnguardar');
+
+btnguardar.addEventListener('click', () => {
+    // Obtener los datos del formulario
+    const programa = document.getElementById("idprograma").innerText;
+    const director = document.getElementById("iddirector").innerText;
+    const semestre = document.getElementById("idsemestre").innerText;
+    const nompractica = document.getElementById("idnompractica").innerText;
+    const numeropractica = document.getElementById("idnumeropractica").innerText;
+    const lugarpractica = document.getElementById("idlugarpractica").innerText;
+    const horaspractica = document.getElementById("idhoraspractica").innerText;
+    const observacion = document.getElementById("idobservacion").innerText;
+    const introduccion = document.getElementById("introduccion").value;
+    const objgeneral = document.getElementById("objgeneral").value;
+    const objespecifico = document.getElementById("objespecifico").value;
+    const descip = document.getElementById("descip").value;
+    const objetos = document.getElementById("objetos").value;
+    const resultados = document.getElementById("resultados").value;
+    const evaluacion = document.getElementById("evaluacion").value;
+
+    // Validar que todos los campos estén diligenciados
+    if (
+        !programa.trim() ||
+        !director.trim() ||
+        !semestre.trim() ||
+        !nompractica.trim() ||
+        !numeropractica.trim() ||
+        !lugarpractica.trim() ||
+        !horaspractica.trim() ||
+        !observacion.trim() ||
+        !introduccion.trim() ||
+        !objgeneral.trim() ||
+        !objespecifico.trim() ||
+        !descip.trim() ||
+        !objetos.trim() ||
+        !resultados.trim() ||
+        !evaluacion.trim()
+    ) {
+        alert("Por favor, complete todos los campos.");
+        return; // Detener la ejecución si falta algún campo
+    }
+
+    const email = sessionStorage.getItem('email');
+
+    fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
+        method: 'GET',
+        headers: {
+            'accept': '*/*'
+        }
+    })
+        .then((response) => response.json())
+        .then((result) => {
+            if (result.isSuccess) {
+                const usuario = result.data;
+                sessionStorage.setItem('usuario', JSON.stringify(usuario));
+
+                const iduser = usuario.id;
+
+                // Fetch con los datos obtenidos
+                fetch(`${window.config.SERVER_URL}api/Documents/AgregarNuevaPracticaPorAsignatura`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        programa,
+                        director,
+                        semestre,
+                        nompractica,
+                        numeropractica,
+                        lugarpractica,
+                        horaspractica,
+                        observacion,
+                        introduccion,
+                        objgeneral,
+                        objespecifico,
+                        descip,
+                        objetos,
+                        resultados,
+                        evaluacion,
+                        idUsuario: iduser
+                    })
+                })
+                    .then((response) => response.json())
+                    .then((result) => {
+                        alert(result.message);
+                        console.log(result);
+                    })
+                    .catch((error) => console.error(error));
+
+            } else {
+                console.error(result.message);
+            }
+        })
+        .catch((error) => console.error(error));
+});
+

@@ -1,3 +1,47 @@
+let inactivityTimeout;
+
+function resetInactivityTimeout() {
+    clearTimeout(inactivityTimeout);
+    inactivityTimeout = setTimeout(() => {
+        // Cerrar sesión o redirigir a la página de inicio de sesión
+        window.location.href = 'index.html';
+    }, 60000); // 5 minutos (300,000 ms)
+}
+
+// Evitar volver atrás al inicio de sesión antes de la función init()
+history.replaceState(null, null, location.href);
+window.addEventListener('popstate', function () {
+    history.replaceState(null, null, location.href);
+});
+
+function init() {
+    resetInactivityTimeout();
+    document.addEventListener('click', resetInactivityTimeout);
+    document.addEventListener('mousemove', resetInactivityTimeout);
+    document.addEventListener('keypress', resetInactivityTimeout);
+
+    // Evitar volver atrás al inicio de sesión dentro de la función init()
+    history.replaceState(null, null, location.href);
+    window.addEventListener('popstate', function () {
+        history.replaceState(null, null, location.href);
+    });
+}
+
+init();
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (!sessionStorage.getItem('isLoggedIn')) {
+        window.location.href = 'index.html';
+    }
+});
+
+window.addEventListener('popstate', function(event) {
+    if (!sessionStorage.getItem('isLoggedIn')) {
+        window.location.href = 'index.html';
+    }
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
     var usuario = JSON.parse(sessionStorage.getItem('usuario'));
 
