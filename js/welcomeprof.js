@@ -27,6 +27,113 @@ document.getElementById("menuButton").addEventListener("click", function() {
   });
 
 
+document.getElementById('Buttonplanaccion').addEventListener('click', function() {
+    window.location.href = 'planaccion.html?from=welcomeprof';
+});
+    
+document.getElementById('Buttonpractasigna').addEventListener('click', function() {
+    window.location.href = 'pracporasig.html?from=welcomeprof';
+});
+
+document.getElementById('Buttonatenestudi').addEventListener('click', function() {
+    window.location.href = 'atenestudiantes.html?from=welcomeprof';
+});
+
+
+  // Este codigo es para la consulta de plan de accion:
+const buttonconsplanaccion = document.getElementById('Buttonconsplanaccion');
+buttonconsplanaccion.addEventListener('click', () => {
+
+    var usuarioString = sessionStorage.getItem('usuario');
+    var usuario = JSON.parse(usuarioString);
+    var id = usuario.data.id;
+
+    fetch(`${window.config.SERVER_URL}api/Documents/GetAllPlanAccionAcademicoPorUsuario?IdUsuario=${id}`, {
+        method: 'GET',
+        headers: {
+            'accept': '*/*'
+        }
+    })
+    .then((response) => response.json()) 
+    .then((result) => {
+        if (result.isSuccess) {
+
+            sessionStorage.setItem('datee', JSON.stringify(result.data));
+
+            window.location.href = 'profconsplanaccion.html';
+        }
+        else {
+            alert("No se encuentran registros asociados al usuario.");
+        }
+    })
+    .catch((error) => console.error(error));
+});
+
+//// aqui se acaba el codigo de consulta plan de accion
+
+  // Este codigo es para la consulta de practica por asignatura:
+const buttonprofconspracporasig = document.getElementById('Buttonconspracporasig');
+buttonprofconspracporasig.addEventListener('click', () => {
+
+    var usuarioString = sessionStorage.getItem('usuario');
+    var usuario = JSON.parse(usuarioString);
+    var id = usuario.data.id;
+
+    fetch(`${window.config.SERVER_URL}api/Documents/GetAllPracticaPorAsignaturaPorUsuario?IdUsuario=${id}`, {
+        method: 'GET',
+        headers: {
+            'Accept': '*/*'
+        }
+    })
+    .then((response) => response.json()) 
+    .then((result) => {
+        if (result.isSuccess) {
+
+            sessionStorage.setItem('datee', JSON.stringify(result.data));
+
+            window.location.href = 'profconspracporasig.html';
+        }
+        else {
+            alert("No se encuentran registros asociados al usuario.");
+        }
+    })
+    .catch((error) => console.error(error));
+});
+
+//// aqui se acaba el codigo de consulta practica por asignatura
+
+  // Este codigo es para la consulta de atencion al estudiante:
+  const buttonprofconsatenest = document.getElementById('Buttonconsatenestu');
+  buttonprofconsatenest.addEventListener('click', () => {
+  
+      var usuarioString = sessionStorage.getItem('usuario');
+      var usuario = JSON.parse(usuarioString);
+      var id = usuario.data.id;
+  
+      fetch(`${window.config.SERVER_URL}api/Documents/GetAllAtencionEstudiantesPorUsuario?IdUsuario=${id}`, {
+          method: 'GET',
+          headers: {
+              'Accept': '*/*'
+          }
+      })
+      .then((response) => response.json()) 
+      .then((result) => {
+          if (result.isSuccess) {
+  
+              sessionStorage.setItem('datee', JSON.stringify(result.data));
+  
+              window.location.href = 'profconsatenestu.html';
+          }
+          else {
+              alert("No se encuentran registros asociados al usuario.");
+          }
+      })
+      .catch((error) => console.error(error));
+  });
+  
+  //// aqui se acaba el codigo de consulta atencion al estudiante
+
+
 const myModal = document.getElementById('myModal');
 const myModalCloseButton = document.getElementById('myModalClose');
 

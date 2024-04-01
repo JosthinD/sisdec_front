@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Color de fondo blanco */
+}
+
+.container {
+    font-size: 1rem;
+    padding: 10px 20px; /* Aumenta el espacio interno */
+    background-color: #020021;
+    color: #fff;
+    text-align: center;
+    display: flex; /* Usa flexbox para el diseño */
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ButtonVolver {
+  background-color: #020021;
+  color: #fff;
+  padding: 10px 20px;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+}
+
+#ButtonVolver:hover {
+  background-color: #191c36;
+  transform: scale(1.1);
+}
+
+
+.desingtable {
+    margin-left: 20px; /* Añade espacio al lado izquierdo */
+    margin-right: 20px; /* Añade espacio al lado derecho */
+    margin-top: 20px; /* Añade espacio arriba */
+    width: calc(100% - 40px); /* Ajusta el ancho para considerar el margen */
+}
+
+  table {
+    border-collapse: collapse; /* Colapsa los bordes de las celdas */
+    width: 100%; /* Ocupa el ancho completo de su contenedor */
+  }
+  
+  th, td {
+    border: 1px solid #020021; /* Añade bordes a las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 8px; /* Añade espacio interno a las celdas */
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+  }

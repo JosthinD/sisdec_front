@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cons Prac por Asig</title>
+    <link rel="stylesheet" href="styles/conspracporasig.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo_uni_sinfond2.png" alt="Imagen encabezado">
+        <h1 id="titulo">Consultar Practica por Asignatura</h1>
+        <did class="ButtonVolver">
+            <button id="ButtonVolver">Volver</button>
+        </did>
+    </div>
+
+    <did class="Opciones-Busqueda">
+        <a>Consultar registro por usuario:</a>
+        <input id="idusuario" placeholder="id de usuario">
+        <button id="btnconsultar">CONSULTAR</button>
+        <button id="btnactualizar">ACTUALIZAR REGISTRO</button>
+    </did>
+
+    
+
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal__paragraph">Actualizar informacion de practica por asignatura</h2>
+        <input type="text" id="id" placeholder="id registro">
+        <input type="text" id="idprograma" placeholder="Programa">
+        <input type="text" id="iddirector" placeholder="Director">
+        <input type="text" id="idsemestre" placeholder="Semestre">
+        <input type="text" id="idnombrePractica" placeholder="Nombre de Practica">
+        <input type="text" id="idnumeroPractica" placeholder="Numero de Practica">
+        <input type="text" id="idlugar" placeholder="Lugar">
+        <input type="text" id="idhoras" placeholder="Horas de Practica">
+        <input type="text" id="idobservaciones" placeholder="Observaciones">
+        <input type="text" id="idintroduccion" placeholder="Introduccion">
+        <input type="text" id="idobjetivoGeneral" placeholder="Objetivo General">
+        <input type="text" id="idobjetivosEspecificos" placeholder="Objetivos Especificos">
+        <input type="text" id="idevidenciasActividades" placeholder="Evidencias">
+        <input type="text" id="idobjetosUsados" placeholder="Materiales, herramientas o equipos usados">
+        <input type="text" id="idresultadoAprendizaje" placeholder="Resultado aprendizaje">
+        <input type="text" id="idevaluacionPractica" placeholder="Evaluacion practica">
+        <input type="text" id="idUsuario" placeholder="id Usuario">
+        <button id="btnactualizarinfo">ACTUALIZAR</button>
+    </div>
+    </div>
+
+    <div class="desingtable">
+        <table id="tabladata">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Programa</th>
+                    <th>Director</th>
+                    <th>Semestre</th>
+                    <th>NombrePractica</th>
+                    <th>NumeroPractica</th>
+                    <th>Lugar</th>
+                    <th>Horas</th>
+                    <th>Observacion</th>
+                    <th>Introduccion</th>
+                    <th>ObjetivoGeneral</th>
+                    <th>ObjetivosEspecificos</th>
+                    <th>EvidenciasActividades</th>
+                    <th>ObjetosUsados</th>
+                    <th>ResultadoAprendizaje</th>
+                    <th>Evaluacion</th>
+                    <th>idUsuario</th>
+                </tr>
+            </thead>
+            <tbody id="tbodydata">
+                <!-- Aquí se llenarán las filas con los datos de logs -->
+            </tbody>
+        </table>
+    </div>
+    
+
+
+    <script src="js/conspracporasig.js"></script> 
+    <script src="js/config.js"></script>
+</body>
+</html>

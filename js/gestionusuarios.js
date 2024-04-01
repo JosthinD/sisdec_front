@@ -1,3 +1,13 @@
+let inactivityTimeout;
+
+function resetInactivityTimeout() {
+    clearTimeout(inactivityTimeout);
+    inactivityTimeout = setTimeout(() => {
+        // Cerrar sesión o redirigir a la página de inicio de sesión
+        window.location.href = 'index.html';
+    }, 300000); // 5 minutos (300,000 ms)
+}
+
 // Obtener el botón por su ID
 const buttonvolver = document.getElementById('ButtonVolver');
 

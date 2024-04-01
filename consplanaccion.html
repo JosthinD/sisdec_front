@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="styles/consplanaccion.css">
 </head>
 <body>
-    <!--<img src="./images/imglogodesinguni.png"  class="imgfondo"> -->
     <div class="container">
+        <img src="images/logo_uni_sinfond2.png" alt="Imagen encabezado">
         <h1 id="titulo">Consultar Plan de Accion</h1>
         <did class="ButtonVolver">
             <button id="ButtonVolver">Volver</button>
@@ -20,7 +20,35 @@
         <a>Consultar registro por usuario:</a>
         <input id="idusuario" placeholder="id de usuario">
         <button id="btnconsultar">CONSULTAR</button>
+        <button id="btnactualizar">ACTUALIZAR REGISTRO</button>
     </did>
+
+    
+
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal__paragraph">Actualizar informacion de plan de accion</h2>
+        <input type="text" id="id" placeholder="id registro" required>
+        <input type="text" id="idprograma" placeholder="Programa" required>
+        <input type="text" id="idfecha" placeholder="Fecha">
+        <input type="text" id="iddirector" placeholder="Director">
+        <input type="text" id="idfechaDos" placeholder="Fecha reg">
+        <input type="text" id="idactividad" placeholder="Actividad">
+        <input type="text" id="iddescripcion" placeholder="Descripcion">
+        <input type="text" id="idduracion" placeholder="Duracion">
+        <input type="text" id="idlugar" placeholder="Lugar">
+        <input type="text" id="idhoraInicio" placeholder="Hora inicio">
+        <input type="text" id="idhoraFin" placeholder="Hora fin">
+        <input type="text" id="idresponsable" placeholder="Responsable">
+        <input type="text" id="idparticipantes" placeholder="Participantes">
+        <input type="text" id="idevidencias" placeholder="Evidencias">
+        <input type="text" id="idUsuario" placeholder="id Usuario" required>
+        <button id="btnactualizarinfo">ACTUALIZAR</button>
+
+
+    </div>
+    </div>
 
     <div class="desingtable">
         <table id="tabladata">

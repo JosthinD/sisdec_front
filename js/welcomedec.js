@@ -19,35 +19,95 @@ document.getElementById("menuButton").addEventListener("click", function() {
 
   
 
-const buttonPlandeAccion = document.getElementById('Buttonplanaccion');
-
-
-buttonPlandeAccion.addEventListener('click', () => {
-
-    window.location.href = 'planaccion.html';
+document.getElementById('Buttonplanaccion').addEventListener('click', function() {
+    window.location.href = 'planaccion.html?from=welcomedec';
 });
 
 
-const buttonPracporasig = document.getElementById('Buttonpractasigna');
-
-
-buttonPracporasig.addEventListener('click', () => {
-
-    window.location.href = 'pracporasig.html';
+document.getElementById('Buttonpractasigna').addEventListener('click', function() {
+    window.location.href = 'pracporasig.html?from=welcomedec';
 });
 
 
-const buttonatenestu = document.getElementById('Buttonatenestudi');
 
-
-buttonatenestu.addEventListener('click', () => {
-
-    window.location.href = 'atenestudiantes.html';
+document.getElementById('Buttonatenestudi').addEventListener('click', function() {
+    window.location.href = 'atenestudiantes.html?from=welcomedec';
 });
 
-const buttonconsplanaccion = document.getElementById('Buttonconsplanaccion');
+
+// Este codigo es para la consulta de ponderacion plan de accion:
+const buttonponplaacc = document.getElementById('Buttonpondplaacc');
+buttonponplaacc.addEventListener('click', () => {
+
+    fetch(`${window.config.SERVER_URL}api/Documents/GetAllPlanAccionAcademico`, {
+        method: 'GET',
+        headers: {
+          'Accept': '*/*'
+        }
+      })
+      .then((response) => response.json()) 
+      .then((result) => {
+          if (result.isSuccess) {
+  
+              sessionStorage.setItem('datee', JSON.stringify(result.data));
+  
+              window.location.href = 'pondplanaccion.html';
+          }
+      })
+      .catch((error) => console.error(error));
+});
+//// aqui se acaba el codigo
+
+// Este codigo es para la consulta de ponderacion practica por asignatura:
+const buttonponpracporasig = document.getElementById('Buttonpondpraasi');
+buttonponpracporasig.addEventListener('click', () => {
+
+    fetch(`${window.config.SERVER_URL}api/Documents/GetAllPracticaPorAsignatura`, {
+        method: 'GET',
+        headers: {
+          'Accept': '*/*'
+        }
+      })
+      .then((response) => response.json()) 
+      .then((result) => {
+          if (result.isSuccess) {
+  
+              sessionStorage.setItem('datee', JSON.stringify(result.data));
+  
+              window.location.href = 'pondpracporasig.html';
+          }
+      })
+      .catch((error) => console.error(error));
+});
+//// aqui se acaba el codigo
+
+
+// Este codigo es para la consulta de ponderacion atencion al estudiante:
+const buttonponatenestu = document.getElementById('Buttonpondateest');
+buttonponatenestu.addEventListener('click', () => {
+
+    fetch(`${window.config.SERVER_URL}api/Documents/GetAllAtencionEstudiantes`, {
+        method: 'GET',
+        headers: {
+          'Accept': '*/*'
+        }
+      })
+      .then((response) => response.json()) 
+      .then((result) => {
+          if (result.isSuccess) {
+  
+              sessionStorage.setItem('datee', JSON.stringify(result.data));
+  
+              window.location.href = 'pondatenestu.html';
+          }
+      })
+      .catch((error) => console.error(error));
+});
+//// aqui se acaba el codigo
+
 
 // Este codigo es para la consulta de plan de accion:
+const buttonconsplanaccion = document.getElementById('Buttonconsplanaccion');
 buttonconsplanaccion.addEventListener('click', () => {
 
     fetch(`${window.config.SERVER_URL}api/Documents/GetAllPlanAccionAcademico`, {
@@ -69,6 +129,57 @@ buttonconsplanaccion.addEventListener('click', () => {
 });
 
 //// aqui se acaba el codigo de consulta plan de accion
+
+// Este codigo es para la consulta de practica por asignatura:
+const buttonconspracporasig = document.getElementById('Buttonconspracporasig');
+buttonconspracporasig.addEventListener('click', () => {
+
+    fetch(`${window.config.SERVER_URL}api/Documents/GetAllPracticaPorAsignatura`, {
+        method: 'GET',
+        headers: {
+            'Accept': '*/*'
+        }
+    })
+    .then((response) => response.json()) 
+    .then((result) => {
+        if (result.isSuccess) {
+
+            sessionStorage.setItem('datee', JSON.stringify(result.data));
+
+            window.location.href = 'conspracporasig.html';
+        }
+    })
+    .catch((error) => console.error(error));
+});
+
+//// aqui se acaba el codigo de consulta practica por asignatura
+
+
+
+
+// Este codigo es para la consulta de practica por asignatura:
+const buttonconsatenestu = document.getElementById('Buttonconsatenestu');
+buttonconsatenestu.addEventListener('click', () => {
+
+    fetch(`${window.config.SERVER_URL}api/Documents/GetAllAtencionEstudiantes`, {
+        method: 'GET',
+        headers: {
+            'Accept': '*/*'
+        }
+    })
+    .then((response) => response.json()) 
+    .then((result) => {
+        if (result.isSuccess) {
+
+            sessionStorage.setItem('datee', JSON.stringify(result.data));
+
+            window.location.href = 'consatenestudiantes.html';
+        }
+    })
+    .catch((error) => console.error(error));
+});
+
+//// aqui se acaba el codigo de consulta practica por asignatura
 
 const cerrarSesionButton = document.querySelector('button[data-action="cerrar-sesion"]');
 

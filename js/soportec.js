@@ -1,9 +1,17 @@
-// Obtener el botón por su ID
+let inactivityTimeout;
+
+function resetInactivityTimeout() {
+    clearTimeout(inactivityTimeout);
+    inactivityTimeout = setTimeout(() => {
+        // Cerrar sesión o redirigir a la página de inicio de sesión
+        window.location.href = 'index.html';
+    }, 300000); // 5 minutos (300,000 ms)
+}
+
+
 const buttonvolver = document.getElementById('ButtonVolver');
 
-// Agregar un event listener para escuchar el clic
 buttonvolver.addEventListener('click', () => {
-    // Redireccionar a soportec.html
   window.location.href = 'welcomeadmin.html';
 });
 

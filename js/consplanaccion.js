@@ -1,9 +1,17 @@
-// Obtener el botón por su ID
+let inactivityTimeout;
+
+function resetInactivityTimeout() {
+    clearTimeout(inactivityTimeout);
+    inactivityTimeout = setTimeout(() => {
+        // Cerrar sesión o redirigir a la página de inicio de sesión
+        window.location.href = 'index.html';
+    }, 300000); // 5 minutos (300,000 ms)
+}
+
 const buttonvolver = document.getElementById('ButtonVolver');
 
-// Agregar un event listener para escuchar el clic
+
 buttonvolver.addEventListener('click', () => {
-    // Redireccionar a soportec.html
   window.location.href = 'welcomedec.html';
 });
 
@@ -88,5 +96,85 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("btnactualizar");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+const buttonactuinfo = document.getElementById('btnactualizarinfo');
+
+buttonactuinfo.addEventListener('click', () => {
+    const id = document.getElementById('id').value;
+    const programa = document.getElementById('idprograma').value;
+    const fecha = document.getElementById('idfecha').value;
+    const director = document.getElementById('iddirector').value;
+    const fechaDos = document.getElementById('idfechaDos').value;
+    const actividad = document.getElementById('idactividad').value;
+    const descripcion = document.getElementById('iddescripcion').value;
+    const duracion = document.getElementById('idduracion').value;
+    const lugar = document.getElementById('idlugar').value;
+    const horaInicio = document.getElementById('idhoraInicio').value;
+    const horaFin = document.getElementById('idhoraFin').value;
+    const responsable = document.getElementById('idresponsable').value;
+    const participantes = document.getElementById('idparticipantes').value;
+    const evidencias = document.getElementById('idevidencias').value;
+    const idUsuario = document.getElementById('idUsuario').value;
+  
+    // Validar que todos los campos estén llenos
+    if (!id || !programa || !fecha || !director || !fechaDos || !actividad || !descripcion || !duracion || !lugar || !horaInicio || !horaFin || !responsable || !participantes || !evidencias || !idUsuario) {
+      alert('Por favor, completa todos los campos.');
+      return; // Detener la ejecución del código
+    }
+  
+    // Si todos los campos están llenos, continuar con el código de la solicitud fetch
+    fetch(`${window.config.SERVER_URL}api/Documents/ActualizarPlanAccion`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'accept': '*/*'
+      },
+      body: JSON.stringify({
+        "id": id,
+        "programa": programa,
+        "fecha": fecha,
+        "director": director,
+        "fechaDos": fechaDos,
+        "actividad": actividad,
+        "descripcion": descripcion,
+        "duracion": duracion,
+        "lugar": lugar,
+        "horaInicio": horaInicio,
+        "horaFin": horaFin,
+        "responsable": responsable,
+        "participantes": participantes,
+        "evidencias": evidencias,
+        "idUsuario": idUsuario
+      })
+    })
+    .then((response) => response.json()) // Convertir la respuesta a JSON
+    .then((result) => {
+        alert(result.message); // Mostrar la respuesta en una alerta
+    })
+    .catch((error) => console.error(error));
+  });
+  
+
 
 

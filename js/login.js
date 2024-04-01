@@ -69,6 +69,7 @@ fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email_pw}`, {
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Evitar que el formulario se envíe
+  document.getElementById('loading').style.display = 'block'; // Mostrar el loading
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -83,6 +84,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   })
   .then((response) => response.json()) // Convertir la respuesta a JSON
   .then((result) => {
+
+    document.getElementById('loading').style.display = 'none';
+    
     if (result.isSuccess) { // Verificar si el inicio de sesión fue exitoso
       // Redirigir a la página correspondiente según el rol
 

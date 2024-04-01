@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Color de fondo blanco */
+}
+
+.container {
+    font-size: 1rem;
+    padding: 10px 20px; /* Aumenta el espacio interno */
+    background-color: #020021;
+    color: #fff;
+    text-align: center;
+    display: flex; /* Usa flexbox para el diseño */
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ButtonVolver {
+    background-color: #020021;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+#ButtonVolver:hover {
+    background-color: #191c36;
+    transform: scale(1.1);
+}
+
+.container-graf {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+.total-registros {
+    text-align: left;
+    padding-left: 20px; /* Espacio para alinear con el contenido */
+    border: 6px solid #c9c9c9 ; /* Borde de grosor medio */
+    font-family: 'Comic Sans MS', cursive; /* Fuente Comic Sans MS */
+    font-size: 2.5rem; /* Tamaño de letra 2.5 */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+    color: #54bcfc; /* Color de la letra azul */
+}
+
+.chart-container {
+    position: relative;
+    height: 40vh;
+    width: 80vw;
+}
+
+
+  
+  
+  
+  
+  

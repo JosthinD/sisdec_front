@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cons Aten Estud</title>
+    <link rel="stylesheet" href="styles/consatenestudiantes.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo_uni_sinfond2.png" alt="Imagen encabezado">
+        <h1 id="titulo">Consultar Atencion a Estudiantes</h1>
+        <did class="ButtonVolver">
+            <button id="ButtonVolver">Volver</button>
+        </did>
+    </div>
+
+    <did class="Opciones-Busqueda">
+        <a>Consultar registro por usuario:</a>
+        <input id="idusuario" placeholder="id de usuario">
+        <button id="btnconsultar">CONSULTAR</button>
+        <button id="btnactualizar">ACTUALIZAR REGISTRO</button>
+    </did>
+
+    
+
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal__paragraph">Actualizar informacion de atencion a estudiantes</h2>
+        <input type="text" id="id" placeholder="id registro">
+        <input type="text" id="idprograma" placeholder="Programa">
+        <input type="text" id="iddirector" placeholder="Director">
+        <input type="text" id="idmodulo" placeholder="Modulo">
+        <input type="text" id="idfecha" placeholder="Fecha">
+        <input type="text" id="idestudiantes" placeholder="Estudiantes">
+        <input type="text" id="idsemestre" placeholder="Semestre">
+        <input type="text" id="idgrupo" placeholder="Grupo">
+        <input type="text" id="idjornada" placeholder="Jornada">
+        <input type="text" id="idmotivo" placeholder="Motivo">
+        <input type="text" id="idobservaciones" placeholder="Observaciones">
+        <input type="text" id="idaprobacionEstudiante" placeholder="¿Aprobacion estudiante? SI/NO">
+        <input type="text" id="idUsuario" placeholder="id usuario">
+        <button id="btnactualizarinfo">ACTUALIZAR</button>
+    </div>
+    </div>
+
+    <div class="desingtable">
+        <table id="tabladata">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Programa</th>
+                    <th>Director</th>
+                    <th>Modulo</th>
+                    <th>Fecha</th>
+                    <th>Estudiantes</th>
+                    <th>Semestre</th>
+                    <th>Grupo</th>
+                    <th>Jornada</th>
+                    <th>Motivo</th>
+                    <th>Observaciones</th>
+                    <th>¿Aprobacion Estudiante? SI/NO</th>
+                    <th>idUsuario</th>
+                </tr>
+            </thead>
+            <tbody id="tbodydata">
+                <!-- Aquí se llenarán las filas con los datos de logs -->
+            </tbody>
+        </table>
+    </div>
+    
+
+
+    <script src="js/consatenestudiantes.js"></script> 
+    <script src="js/config.js"></script>
+</body>
+</html>

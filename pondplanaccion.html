@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pond Plan de Accion</title>
+    <link rel="stylesheet" href="styles/pondplanaccion.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo_uni_sinfond2.png" alt="Imagen encabezado">
+        <h1 id="titulo">Ponderacion Plan de Accion</h1>
+        <div class="ButtonVolver">
+            <button id="ButtonVolver">Volver</button>
+        </div>
+    </div>
+
+    <div class = "container-graf">
+
+        <div class="total-registros">Total registros: <span id="totalRegistros"></span></div>
+
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="pieChart"></canvas>
+        </div>
+    
+    
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="scatterChart"></canvas>
+        </div>
+
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="lineChart"></canvas>
+        </div>
+
+        
+
+    </div>
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/pondplanaccion.js"></script>
+    <script src="js/config.js"></script>
+</body>
+</html>
