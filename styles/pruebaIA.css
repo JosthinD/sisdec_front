@@ -34,15 +34,31 @@ body {
     transform: scale(1.1);
 }
 
+/* Estilos para los botones */
 button {
-    /* Estilos comunes para todos los botones */
-    padding: 8px 16px; /* Padding más pequeño para los botones */
-    margin: 4px; /* Margen entre los botones */
-}
-
-button {
-    margin-top: 10px; /* Espacio entre el textarea y los botones */
-}
+    background-color: #020021;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50px;
+  }
+  
+  button:hover {
+    background-color: #191c36;
+    transform: scale(1.1);
+  }
+  
+  /* Estilos para centrar los botones dentro de .botonesalcentro */
+  .botonesalcentro {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente (si es necesario) */
+    flex-direction: row; /* Alinea los botones horizontalmente. Cambia a column para alineación vertical */
+    gap: 10px; /* Espacio entre los botones */
+  }
+  
 
 .vitrinaIA {
     display: flex; /* Cambiar a flexbox */

@@ -68,8 +68,11 @@ fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email_pw}`, {
 
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Evitar que el formulario se envíe
+  event.preventDefault();
+  document.getElementById('loadingBackdrop').style.display = 'block'; // Mostrar el fondo semi-transparente
   document.getElementById('loading').style.display = 'block'; // Mostrar el loading
+
+
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -85,7 +88,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   .then((response) => response.json()) // Convertir la respuesta a JSON
   .then((result) => {
 
+
     document.getElementById('loading').style.display = 'none';
+    document.getElementById('loadingBackdrop').style.display = 'none'; // Ocultar el fondo semi-transparente
     
     if (result.isSuccess) { // Verificar si el inicio de sesión fue exitoso
       // Redirigir a la página correspondiente según el rol
@@ -114,6 +119,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         sessionStorage.setItem('email', email); // Guardar el email en la sesión
         
         switch(result.data.rol) {
+          
           case 'Administrador':
               window.location.href = 'welcomeadmin.html';
 
@@ -137,7 +143,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         })
    
       .catch((error) => console.error(error));
-
+ 
     } 
     
     else {
@@ -145,10 +151,20 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     }
   })
   .catch((error) => {
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('loadingBackdrop').style.display = 'none'; // Asegurar que se oculte incluso en error
+    console.error('Error:', error);
+    //alert("Error en el proceso de login. Por favor, inténtalo de nuevo más tarde.");
     // Mostrar un alert con el mensaje de error del catch
     alert("Lo sentimos, estamos experimentando problemas técnicos. Por favor, inténtalo de nuevo más tarde. Error: 500");
   });
+
+
+
 });
+
+
 
 
 

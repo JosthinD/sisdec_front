@@ -8,6 +8,16 @@ function resetInactivityTimeout() {
     }, 300000); // 5 minutos (300,000 ms)
 }
 
+// Iniciar el timeout de inactividad cuando se carga la página
+resetInactivityTimeout();
+
+// Eventos comunes que deberían resetear el timeout de inactividad
+const events = ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'];
+
+events.forEach(event => {
+    document.addEventListener(event, resetInactivityTimeout);
+});
+
 
 document.addEventListener("DOMContentLoaded", function() {
     var usuario = JSON.parse(sessionStorage.getItem('usuario'));
