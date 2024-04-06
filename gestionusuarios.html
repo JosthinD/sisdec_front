@@ -17,6 +17,30 @@
         </did>
     </div>
 
+    <button class="modal-button" onclick="openModal()">Seleccione esta opcion para crear un usuario</button>
+
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation();">
+          <span onclick="closeModal()" style="float:right; cursor:pointer;">&times;</span>
+        <h2>Crear Usuario</h2>
+        <form id="createForm">
+        <input type="text" id="id_primerNombre" name="primerNombre" placeholder="Primer Nombre">
+        <input type="text" id="id_segundoNombre" name="segundoNombre" placeholder="Segundo Nombre">
+        <input type="text" id="id_primerApellido" name="primerApellido" placeholder="Primer Apellido">
+        <input type="text" id="id_segundoApellido" name="segundoApellido" placeholder="Segundo Apellido">
+        <input type="text" id="id_idTipoDocumento" name="idTipoDocumento" placeholder="Tipo de documento">
+        <input type="text" id="id_numeroDocumento" name="numeroDocumento" placeholder="Numero de documento">
+        <input type="text" id="id_idGenero" name="idGenero" placeholder="id Genero">
+        <input type="text" id="id_telefono" name="telefono" placeholder="Telefono">
+        <input type="text" id="id_correo" name="correo" placeholder="Correo">
+        <input type="text" id="id_contraseña" name="contraseña" placeholder="Contraseña">
+        <input type="text" id="id_idRol" name="idRol" placeholder="id Rol">
+        <input type="text" id="id_idEstado" name="idEstado" placeholder="id Estado usuario">
+        <button type="button" onclick="createUser()" class="modal-button">Crear</button>
+        </form>
+    </div>
+    </div>
+
     <div class="Options-Busqueda">
         <did>
             <a>Actualizar contraseña:</a>

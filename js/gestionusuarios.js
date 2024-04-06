@@ -49,6 +49,44 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+const modal = document.getElementById('myModal');
+
+  function openModal() {
+    modal.style.display = "block";
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  function createUser() {
+    const formData = new FormData(document.getElementById("createForm"));
+    const data = Object.fromEntries(formData.entries());
+  
+    // Validar que todos los campos estén llenos
+    if (Object.values(data).every(value => value.trim() !== '')) {
+      fetch(`${window.config.SERVER_URL}api/Users/CreateNewUser`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'accept': '*/*'
+        },
+        body: JSON.stringify(data)
+      })
+      .then((response) => response.json()) // Convertir la respuesta a JSON
+      .then((result) => {
+            alert(result.message); // Mostrar la respuesta en una alerta
+            console.log(result); // Opcional: Mostrar la respuesta en la consola
+      })
+      .catch(error => {
+        console.error('Error al crear el usuario:', error);
+      });
+    } else {
+      alert('Todos los campos son obligatorios');
+    }
+  }
+  
+
 // Obtener el botón por su ID
 const buttoncontra = document.getElementById('btnguardarcontraseña');
 

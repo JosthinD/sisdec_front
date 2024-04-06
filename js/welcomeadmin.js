@@ -111,17 +111,17 @@ buttonPruebaIA.addEventListener('click', () => {
 });
 
 
+const cerrarSesionButton = document.querySelector('button[data-action="cerrar-sesion"]');
+
+cerrarSesionButton.addEventListener('click', () => {
+    window.location.href = 'index.html#';
+});
+
 const myModal = document.getElementById('myModal');
 const myModalCloseButton = document.getElementById('myModalClose');
 
 myModalCloseButton.addEventListener('click', () => {
     myModal.style.display = 'none';
-});
-
-const cerrarSesionButton = document.querySelector('button[data-action="cerrar-sesion"]');
-
-cerrarSesionButton.addEventListener('click', () => {
-    window.location.href = 'index.html#';
 });
 
 const editUserButton = document.querySelector('button:nth-child(2)');

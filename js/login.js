@@ -8,63 +8,69 @@ document.getElementsByClassName("close")[0].addEventListener("click", function()
   document.getElementById("modal").style.display = "none";
 });
 
-// Enviar información y mostrar alerta al hacer clic en "Enviar novedad"
 document.getElementById("send").addEventListener("click", function() {
+  const email_pw = document.getElementById("email_pw").value;
+  
+  // Mostrar el loading antes de iniciar el fetch
+  document.getElementById('loadingModalBackdrop').style.display = 'block'; 
+  document.getElementById('loadingModal').style.display = 'block'; 
 
-// Obtener datos ingresados por el usuario
-const email_pw = document.getElementById("email_pw").value;
-
-// Realizar la solicitud FETCH para obtener los datos del usuario
-fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email_pw}`, {
+  fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email_pw}`, {
     method: 'GET',
     headers: {
         'accept': '*/*'
     }
-})
-    .then(response => response.json())
-    .then((result) => {
+  })
+  .then(response => response.json())
+  .then((result) => {
+      if (result.isSuccess) {
+        sessionStorage.setItem('usuario', JSON.stringify(result));
 
-        if (result.isSuccess) {
+        const usuario = JSON.parse(sessionStorage.getItem('usuario'));
+        const idUsuario = usuario.data.id;
 
-          sessionStorage.setItem('usuario', JSON.stringify(result));
+        const myHeaders = new Headers();
+        myHeaders.append("accept", "*/*");
+        myHeaders.append("Content-Type", "application/json");
 
-          const usuario = JSON.parse(sessionStorage.getItem('usuario'));
-          const idUsuario = usuario.data.id;
+        const raw = JSON.stringify({
+            "asunto": "Olvide mi contraseña",
+            "descripcion": "Ayuda, olvidé mi contraseña",
+            "idUsuario": idUsuario
+        });
 
-          const myHeaders = new Headers();
-          myHeaders.append("accept", "*/*");
-          myHeaders.append("Content-Type", "application/json");
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
 
-          const raw = JSON.stringify({
-              "asunto": "Olvide mi contraseña",
-              "descripcion": "Ayuda, olvidé mi contraseña",
-              "idUsuario": idUsuario
-          });
+        return fetch(`${window.config.SERVER_URL}api/Support/NewSoporte`, requestOptions);
+      } else {
+        // Manejo del caso en que isSuccess no es true
+        throw new Error('La operación no fue exitosa.');
+      }
+  })
+  .then(response => response.json())
+  .then((result) => {
+      alert(result.message + (" <<Se ha enviado la novedad al administrador, espere respuesta.>>"));
+      console.log(result);
+  })
+  .catch(error => {
+      console.error(error);
+      alert("Error en el proceso de envío. Por favor, inténtalo de nuevo más tarde.");
+  })
+  .finally(() => {
+      // Ocultar el loading después de completar el fetch o si ocurre un error
+      document.getElementById('loadingModal').style.display = 'none';
+      document.getElementById('loadingModalBackdrop').style.display = 'none';
+      
+      // Cerrar modal después de enviar la información
+      document.getElementById("modal").style.display = "none";
+  });
+});
 
-            const requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: raw,
-                redirect: "follow"
-            };
-
-            fetch(`${window.config.SERVER_URL}api/Support/NewSoporte`, requestOptions)
-            .then((response) => response.json()) // Convertir la respuesta a JSON
-            .then((result) => {
-                alert(result.message+("<<Se ha enviado la novedad al administrador, espere respuesta.>>")); // Mostrar la respuesta en una alerta
-                console.log(result); // Opcional: Mostrar la respuesta en la consola
-            })
-            .catch(error => console.error(error));
-
-        }
-
-
-    })
-    .catch(error => console.error('error', error));
-
-  // Cerrar modal después de enviar la información
-  document.getElementById("modal").style.display = "none";
-})
 
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
