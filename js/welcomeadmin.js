@@ -8,16 +8,6 @@ function resetInactivityTimeout() {
     }, 300000); // 5 minutos (300,000 ms)
 }
 
-// Iniciar el timeout de inactividad cuando se carga la página
-resetInactivityTimeout();
-
-// Eventos comunes que deberían resetear el timeout de inactividad
-const events = ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'];
-
-events.forEach(event => {
-    document.addEventListener(event, resetInactivityTimeout);
-});
-
 
 document.addEventListener("DOMContentLoaded", function() {
     var usuario = JSON.parse(sessionStorage.getItem('usuario'));
@@ -29,14 +19,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.getElementById("menuButton").addEventListener("click", function() {
-    var menuContainer = document.getElementById("menuContainer");
-    if (menuContainer.style.display !== "block") {
-      menuContainer.style.display = "block";
-    } else {
-      menuContainer.style.display = "none";
-    }
-  });
+const menuButton = document.getElementById("menuButton");
+const menuContainer = document.getElementById("menuContainer");
+const overlay = document.getElementById("overlay");
+
+menuButton.addEventListener("click", function() {
+    menuContainer.style.display = "block";
+    overlay.style.display = "block";
+    setTimeout(() => {
+        menuContainer.style.opacity = "1";
+        overlay.style.opacity = "1";
+    }, 10); // Espera un poco antes de aplicar la opacidad para que se vea la transición
+});
+
+overlay.addEventListener("click", function() {
+    menuContainer.style.opacity = "0";
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+        menuContainer.style.display = "none";
+        overlay.style.display = "none";
+    }, 300); // Espera a que termine la transición antes de ocultar completamente el menú
+});
 
 
 // Obtener el botón por su ID
@@ -111,17 +114,17 @@ buttonPruebaIA.addEventListener('click', () => {
 });
 
 
-const cerrarSesionButton = document.querySelector('button[data-action="cerrar-sesion"]');
-
-cerrarSesionButton.addEventListener('click', () => {
-    window.location.href = 'index.html#';
-});
-
 const myModal = document.getElementById('myModal');
 const myModalCloseButton = document.getElementById('myModalClose');
 
 myModalCloseButton.addEventListener('click', () => {
     myModal.style.display = 'none';
+});
+
+const cerrarSesionButton = document.querySelector('button[data-action="cerrar-sesion"]');
+
+cerrarSesionButton.addEventListener('click', () => {
+    window.location.href = 'index.html#';
 });
 
 const editUserButton = document.querySelector('button:nth-child(2)');

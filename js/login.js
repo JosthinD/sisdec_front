@@ -8,6 +8,7 @@ document.getElementsByClassName("close")[0].addEventListener("click", function()
   document.getElementById("modal").style.display = "none";
 });
 
+
 document.getElementById("send").addEventListener("click", function() {
   const email_pw = document.getElementById("email_pw").value;
   

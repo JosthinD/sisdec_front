@@ -14,30 +14,64 @@ body {
   }
 
   
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0px; /* Adjusted to start from the right edge of the menu */
+    width: calc(100% - 0px); /* Calculate width to cover the rest of the screen */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparente */
+    z-index: 99; /* Colocar encima del resto del contenido */
+  }
+  
   .menuContainer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 300px;
     height: 100%;
     background-color: #020021;
     color: #fff;
     display: none;
     border-right: 7px solid white; /* Agrega una línea blanca en el lado derecho */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s; /* Transición suave */
+    z-index: 100; /* Ensure menu is on top of overlay */
   }
-  
-  .menuItem {
-    padding: 10px 20px;
-    background-color: #020021;
+
+
+.menuContainer .titulom__paragraph {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
     color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .menuItem:hover {
+    margin-bottom: 20px;
+}
+
+#optionsmenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#optionsmenu li {
+    margin-bottom: 10px;
+}
+
+#optionsmenu a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#optionsmenu a:hover {
     background-color: #888;
-    padding: 10px 40px;
-  }
+}
 
 
 .welcome-container {

@@ -30,14 +30,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //const userIdpri = document.getElementById('id_use').value;
 
-document.getElementById("menuButton").addEventListener("click", function() {
-    var menuContainer = document.getElementById("menuContainer");
-    if (menuContainer.style.display !== "block") {
-      menuContainer.style.display = "block";
-    } else {
-      menuContainer.style.display = "none";
-    }
-  });
+const menuButton = document.getElementById("menuButton");
+const menuContainer = document.getElementById("menuContainer");
+const overlay = document.getElementById("overlay");
+
+menuButton.addEventListener("click", function() {
+    menuContainer.style.display = "block";
+    overlay.style.display = "block";
+    setTimeout(() => {
+        menuContainer.style.opacity = "1";
+        overlay.style.opacity = "1";
+    }, 10); // Espera un poco antes de aplicar la opacidad para que se vea la transición
+});
+
+overlay.addEventListener("click", function() {
+    menuContainer.style.opacity = "0";
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+        menuContainer.style.display = "none";
+        overlay.style.display = "none";
+    }, 300); // Espera a que termine la transición antes de ocultar completamente el menú
+});
 
 
 document.getElementById('Buttonplanaccion').addEventListener('click', function() {
@@ -170,7 +183,7 @@ editUserButton.addEventListener('click', () => {
 
 
     // Realizar la solicitud FETCH para obtener los datos del usuario
-    fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+    fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
         method: 'GET',
         headers: {
           'accept': '*/*'
@@ -229,7 +242,7 @@ enviarButton.addEventListener('click', (event) => {
         redirect: "follow"
     };
 
-    fetch("https://localhost:7215/api/Users/PutDataUser", requestOptions)
+    fetch(`${window.config.SERVER_URL}api/Users/PutDataUser`, requestOptions)
     .then((response) => response.json()) // Convertir la respuesta a JSON
     .then((result) => {
         alert(result.message); // Mostrar la respuesta en una alerta
@@ -253,7 +266,7 @@ cambiarContraseñaButton.addEventListener('click', () => {
   cambiarContraseñaModal.style.display = 'block';
 
   // Realizar la solicitud FETCH para obtener los datos del usuario
-  fetch(`https://localhost:7215/api/Users/GetAllDataUser?email=${email}`, {
+  fetch(`${window.config.SERVER_URL}api/Users/GetAllDataUser?email=${email}`, {
       method: 'GET',
       headers: {
         'accept': '*/*'
@@ -297,7 +310,7 @@ enviarcontrButton.addEventListener('click', (event) => {
         const userId = document.getElementById('id_user').value;
         const oldPassword = document.getElementById('oldPassword').value;
 
-        fetch(`https://localhost:7215/api/Users/VerifyPasswordForUser?userId=${userId}&contraseña=${oldPassword}`, {
+        fetch(`${window.config.SERVER_URL}api/Users/VerifyPasswordForUser?userId=${userId}&contraseña=${oldPassword}`, {
         method: 'GET',
         headers: {
             'Accept': '*/*'
@@ -323,7 +336,7 @@ enviarcontrButton.addEventListener('click', (event) => {
                 redirect: 'follow'
                 };
 
-                fetch(`https://localhost:7215/api/Users/UpdateUserPassword?userId=${userId}&contraseña=${newPassword}`, requestOptions)
+                fetch(`${window.config.SERVER_URL}api/Users/UpdateUserPassword?userId=${userId}&contraseña=${newPassword}`, requestOptions)
                 .then((response) => response.json()) // Convertir la respuesta a JSON
                 .then((result) => {
                     alert(result.message); // Mostrar la respuesta en una alerta

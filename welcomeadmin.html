@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="./images/icouni.png" type="image/png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,22 +20,25 @@
     </div>
 
     <div class="botones_sesion">
-        <button id="menuButton"><img src="./images/imgmenu.png" alt="Imagen">Menu</button>
+        <button id="menuButton"><img src="./images/imgmenu.PNG" alt="Imagen">Menu</button>
         <button type="submit"><img src="./images/imgediusu.png" alt="Imagen">Editar Usuario</button>
         <button id="cambiarContraseñaButton"><img src="./images/imgcamcont.png" alt="Imagen">Cambiar Contraseña</button>
         <button data-action="cerrar-sesion"><img src="./images/imgsalir.png" alt="Imagen">Cerrar Sesión</button>
     </div>
 
+    <div class="overlay" id="overlay"></div>
+
     
-    <div class="menuContainer" id="menuContainer">
+    <nav class="menuContainer" id="menuContainer">
         <h1 class="titulom__paragraph">Menu</h1>
-        <div id="optionsmenu">
-            <button class="menuItem" id="ButtonSoportetecnico">Soporte Tecnico</button>
-            <button class="menuItem" id="ButtonAuditoria">Auditoria</button>
-            <button class="menuItem" id="ButtonGestionUsuarios">Gestion de Usuarios</button>
-            <button class="menuItem" id="ButtonPruebaIA">Prueba de la IA</button>
-        </div>
-    </div>
+        <ul id="optionsmenu">
+            <li><a href="#" id="ButtonSoportetecnico">Soporte Técnico</a></li>
+            <li><a href="#" id="ButtonAuditoria">Auditoria</a></li>
+            <li><a href="#" id="ButtonGestionUsuarios">Gestión de Usuarios</a></li>
+            <li><a href="#" id="ButtonPruebaIA">Prueba de IA</a></li>
+        </ul>
+    </nav>
+    
 
     <div id="myModal" class="modal">
         <div class="modal-content">

@@ -9,22 +9,27 @@
     <link rel="stylesheet" href="styles/estilos.css">  
 </head>
 <body>
-    <div class="container">
+    <div class="wrapper">
         <form id="login-form" class="login-form">
-            <h1 class="hero__title">¡Bienvenido a SISDEC!</h1>
-            <figure class="knowledge__picture">
-                <img src="./images/logo_uni.png" class="knowledge__img">
-            </figure>
-            <p class="knowledge__paragraph">Sistema integral para la gestion de la decanatura de ingenieria de sistemas IUDC</p>
-            <input type="text" id="email" name="email" required placeholder="Correo">
-            <input type="password" id="password" name="password" required placeholder="Contraseña">
-            <button type="submit">Ingresar</button>
+        <form action="" id="login-form" class="login-form">
+          <h1>¡Bienvenido a SISDEC!</h1>
+          <p class="knowledge__paragraph">Sistema integral para la gestion de la decanatura de ingenieria de sistemas IUDC</p>
+          <div class="input-box">
+            <input type="text" id="email" placeholder="Correo" required>
+            <i class='bx bxs-user'></i>
+          </div>
+          <div class="input-box">
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <i class='bx bxs-lock-alt' ></i>
+          </div>
+          <div class="remember-forgot">
             <a href="#" id="forgotPassword" class="forgot-password">¿Olvidaste tu contraseña?</a>
-            <div id="loadingBackdrop"></div>
+          </div>
+          <button type="submit" class="btn">Ingresar</button>
+                      <div id="loadingBackdrop"></div>
             <div id="loading" class="loader"></div>
-
-            
         </form>
+    </div>
 
 
     
